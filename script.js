@@ -1,6 +1,6 @@
 /**
- * Hetavi Rampariya - Personal Developer Profile / Dashboard Interactive Scripts
- * Powers animations, particle canvas, terminal simulator, project modals, and resume viewer.
+ * Hetavi Rampariya - Personal Developer Portfolio Interactive Scripts
+ * Handles multi-section scrollspy, particle animations, terminal simulator, project modals, and resume viewer.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -50,8 +50,8 @@ function initParticleCanvas() {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
+      this.vx = (Math.random() - 0.5) * 0.45;
+      this.vy = (Math.random() - 0.5) * 0.45;
       this.radius = Math.random() * 1.5 + 1;
       this.color = Math.random() > 0.5 ? 'rgba(124, 58, 237, ' : 'rgba(56, 189, 248, ';
       this.alpha = Math.random() * 0.4 + 0.15;
@@ -85,7 +85,7 @@ function initParticleCanvas() {
     }
   }
 
-  const count = Math.min(Math.floor((width * height) / 16000), 65);
+  const count = Math.min(Math.floor((width * height) / 15000), 70);
   for (let i = 0; i < count; i++) {
     particles.push(new Particle());
   }
@@ -102,11 +102,11 @@ function initParticleCanvas() {
         let dy = particles[i].y - particles[j].y;
         let dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 95) {
+        if (dist < 100) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(124, 58, 237, ${0.1 * (1 - dist / 95)})`;
+          ctx.strokeStyle = `rgba(124, 58, 237, ${0.1 * (1 - dist / 100)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -162,7 +162,7 @@ function initTerminalSimulator() {
   if (copyBtn && termConsole) {
     copyBtn.addEventListener('click', () => {
       navigator.clipboard.writeText(termConsole.innerText).then(() => {
-        showToast('Terminal content copied to clipboard!');
+        showToast('Terminal output copied to clipboard!');
       }).catch(() => {
         showToast('Copied terminal output.');
       });
@@ -175,22 +175,22 @@ function initTerminalSimulator() {
    ========================================================================== */
 function initScrollSpy() {
   const navbar = document.getElementById('navbar');
-  const panels = document.querySelectorAll('[id]');
+  const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 25) {
+    if (window.scrollY > 30) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    let current = 'overview';
-    panels.forEach(panel => {
-      const panelTop = panel.offsetTop - 120;
-      const panelHeight = panel.clientHeight;
-      if (window.scrollY >= panelTop && window.scrollY < panelTop + panelHeight) {
-        current = panel.getAttribute('id');
+    let current = 'home';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
       }
     });
 
@@ -230,7 +230,7 @@ function initRevealOnScroll() {
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -25px 0px'
+    rootMargin: '0px 0px -30px 0px'
   });
 
   reveals.forEach(el => observer.observe(el));
@@ -352,25 +352,25 @@ function initModals() {
     modalTitle.innerHTML = `<i class="fa-solid fa-layer-group text-purple"></i> ${data.title}`;
     
     modalBody.innerHTML = `
-      <div style="display:flex; flex-direction:column; gap:14px;">
-        <div style="width:100%; height:190px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="width:100%; height:200px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
           <img src="${data.image}" alt="${data.title}" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div>
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.78rem; color:var(--text-dim); font-weight:600;">${data.date}</span>
-            <span class="p-status active">${data.status}</span>
+            <span style="font-size:0.80rem; color:var(--text-dim); font-weight:600;">${data.date}</span>
+            <span class="project-status active">${data.status}</span>
           </div>
-          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.55; margin-bottom:14px;">${data.overview}</p>
+          <p style="font-size:0.90rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">${data.overview}</p>
           
-          <h4 style="font-size:0.92rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-network-wired text-purple"></i> Architecture Highlights:</h4>
-          <ul style="margin-left:18px; font-size:0.82rem; color:var(--text-muted); line-height:1.5; margin-bottom:16px;">
-            ${data.architecture.map(a => `<li style="margin-bottom:4px;">${a}</li>`).join('')}
+          <h4 style="font-size:0.95rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-network-wired text-purple"></i> Architecture Highlights:</h4>
+          <ul style="margin-left:18px; font-size:0.84rem; color:var(--text-muted); line-height:1.55; margin-bottom:16px;">
+            ${data.architecture.map(a => `<li style="margin-bottom:5px;">${a}</li>`).join('')}
           </ul>
 
-          <h4 style="font-size:0.88rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-code text-cyan"></i> Tech Stack:</h4>
-          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px;">
-            ${data.techStack.map(t => `<span class="tag">${t}</span>`).join('')}
+          <h4 style="font-size:0.90rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-code text-cyan"></i> Tech Stack:</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px;">
+            ${data.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
           </div>
 
           <div style="display:flex; justify-content:flex-end;">
@@ -516,7 +516,7 @@ function initBackToTop() {
   if (!btn) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 350) {
       btn.classList.add('visible');
     } else {
       btn.classList.remove('visible');
