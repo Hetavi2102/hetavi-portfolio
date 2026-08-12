@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hetavi Rampariya | AI & Data Science Student & Aspiring Software Developer</title>
-  <meta name="description" content="Personal portfolio application of Hetavi Rampariya — AI & Data Science Engineering Student & Aspiring Software Developer building clean applications and intelligent systems.">
+  <meta name="description" content="Personal portfolio of Hetavi Rampariya — AI & Data Science Engineering Student & Aspiring Software Developer building clean applications and intelligent systems.">
   <meta name="keywords" content="Hetavi Rampariya, AI & Data Science, Aspiring Software Developer, Python, Flask, Machine Learning, Portfolio">
   <meta name="author" content="Hetavi Rampariya">
 
@@ -85,6 +85,7 @@
     <div class="portfolio-view active-view" id="view-home" data-view="home">
       <div class="view-container">
         
+        <!-- Hero Section -->
         <div class="hero-grid">
           
           <!-- Left: Hero Introduction -->
@@ -105,7 +106,7 @@
             </div>
 
             <p class="hero-description">
-              I build clean, user-focused applications and AI-powered solutions while exploring software engineering, backend development, and machine learning.
+              Final-year B.Tech student in Artificial Intelligence & Data Science building full-stack web systems in Python, Flask, and SQL, spanning hybrid database architectures, CRUD platforms, and NLP/RAG-based applications.
             </p>
 
             <div class="hero-cta-group">
@@ -138,7 +139,7 @@
               <i class="fa-solid fa-layer-group text-purple"></i>
               <div>
                 <span class="fb-label">Stack</span>
-                <span class="fb-text">Python • AI/ML • Web</span>
+                <span class="fb-text">Python • Flask • SQL</span>
               </div>
             </div>
 
@@ -163,17 +164,17 @@
                 <div class="t-res">B.Tech in AI & Data Science <span class="t-pill">8.17 CGPA</span></div>
 
                 <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">focus</span></div>
-                <div class="t-res text-cyan">Software Development + AI / ML</div>
+                <div class="t-res text-cyan">Full-Stack Development + AI / ML</div>
 
                 <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">currently_building</span></div>
-                <div class="t-res text-purple">TailorFlow <span class="t-sub">(Smart Tailor Management)</span></div>
+                <div class="t-res text-purple">TailorFlow <span class="t-sub">(Full-Stack Management)</span></div>
 
                 <div class="t-line active-line">
                   <span class="t-prompt">$</span> <span class="t-cmd" id="term-active-cmd">status --roles</span>
                   <span class="cursor-blink">_</span>
                 </div>
                 <div class="t-res t-status-text" id="term-active-res">
-                  Ready for software engineering internships & AI developer roles.
+                  Open for software engineering internships & developer roles.
                 </div>
               </div>
 
@@ -190,7 +191,7 @@
               <i class="fa-solid fa-bolt text-cyan"></i>
               <div>
                 <span class="fb-label">Building</span>
-                <span class="fb-text">TailorFlow (Full-Stack)</span>
+                <span class="fb-text">TailorFlow (MySQL + Mongo)</span>
               </div>
             </div>
 
@@ -198,34 +199,89 @@
 
         </div>
 
-        <!-- Quick View Navigators at bottom of Home -->
-        <div class="home-quick-links">
-          <a href="#/about" class="quick-link-tile glass-card router-link" data-route="about">
-            <div class="ql-icon purple"><i class="fa-solid fa-user"></i></div>
-            <div>
-              <h4 class="ql-title">About Me</h4>
-              <p class="ql-desc">Background & interests</p>
-            </div>
-            <i class="fa-solid fa-chevron-right ql-arrow"></i>
-          </a>
+        <!-- ===============================================================
+             FEATURED BOTTOM NAVIGATION: "EXPLORE MY PORTFOLIO"
+             =============================================================== -->
+        <div class="home-explore-section">
+          <div class="explore-header">
+            <span class="explore-tag">NAVIGATION HUB</span>
+            <h2 class="explore-title">EXPLORE <span class="gradient-text">MY PORTFOLIO</span></h2>
+            <p class="explore-subtitle">Select a destination to explore my work, skills, and background</p>
+          </div>
 
-          <a href="#/skills" class="quick-link-tile glass-card router-link" data-route="skills">
-            <div class="ql-icon cyan"><i class="fa-solid fa-code"></i></div>
-            <div>
-              <h4 class="ql-title">Tech Stack</h4>
-              <p class="ql-desc">Languages & tools</p>
-            </div>
-            <i class="fa-solid fa-chevron-right ql-arrow"></i>
-          </a>
+          <div class="explore-nav-grid">
+            
+            <a href="#/about" class="explore-card glass-card router-link" data-route="about">
+              <div class="ec-top">
+                <span class="ec-num">01</span>
+                <div class="ec-icon purple"><i class="fa-solid fa-user-astronaut"></i></div>
+              </div>
+              <h3 class="ec-label">ABOUT</h3>
+              <p class="ec-desc">Background, stack focus & overview</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
 
-          <a href="#/projects" class="quick-link-tile glass-card router-link" data-route="projects">
-            <div class="ql-icon purple"><i class="fa-solid fa-cubes"></i></div>
-            <div>
-              <h4 class="ql-title">Featured Projects</h4>
-              <p class="ql-desc">4 core applications</p>
-            </div>
-            <i class="fa-solid fa-chevron-right ql-arrow"></i>
-          </a>
+            <a href="#/education" class="explore-card glass-card router-link" data-route="education">
+              <div class="ec-top">
+                <span class="ec-num">02</span>
+                <div class="ec-icon cyan"><i class="fa-solid fa-graduation-cap"></i></div>
+              </div>
+              <h3 class="ec-label">EDUCATION</h3>
+              <p class="ec-desc">B.Tech (8.17 CGPA), HSC & SSC</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#/skills" class="explore-card glass-card router-link" data-route="skills">
+              <div class="ec-top">
+                <span class="ec-num">03</span>
+                <div class="ec-icon purple"><i class="fa-solid fa-code"></i></div>
+              </div>
+              <h3 class="ec-label">SKILLS</h3>
+              <p class="ec-desc">Languages, ML, databases & tools</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#/projects" class="explore-card glass-card router-link" data-route="projects">
+              <div class="ec-top">
+                <span class="ec-num">04</span>
+                <div class="ec-icon cyan"><i class="fa-solid fa-cubes"></i></div>
+              </div>
+              <h3 class="ec-label">PROJECTS</h3>
+              <p class="ec-desc">TailorFlow, ContractLens & SmartShelf</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#/certifications" class="explore-card glass-card router-link" data-route="certifications">
+              <div class="ec-top">
+                <span class="ec-num">05</span>
+                <div class="ec-icon purple"><i class="fa-solid fa-certificate"></i></div>
+              </div>
+              <h3 class="ec-label">CERTIFICATIONS</h3>
+              <p class="ec-desc">AWS, HackerRank Python & SQL</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#/activities" class="explore-card glass-card router-link" data-route="activities">
+              <div class="ec-top">
+                <span class="ec-num">06</span>
+                <div class="ec-icon cyan"><i class="fa-solid fa-trophy"></i></div>
+              </div>
+              <h3 class="ec-label">ACTIVITIES</h3>
+              <p class="ec-desc">CSI Committee & Hackathons</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+            <a href="#/contact" class="explore-card glass-card router-link explore-card-highlight" data-route="contact">
+              <div class="ec-top">
+                <span class="ec-num">07</span>
+                <div class="ec-icon purple"><i class="fa-solid fa-paper-plane"></i></div>
+              </div>
+              <h3 class="ec-label">CONTACT</h3>
+              <p class="ec-desc">Get in touch & direct message</p>
+              <div class="ec-link-arrow"><span>Explore View</span> <i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+
+          </div>
         </div>
 
       </div>
@@ -239,7 +295,7 @@
         
         <div class="view-header">
           <span class="view-tag">PERSONAL OVERVIEW</span>
-          <h2 class="view-title">About <span class="gradient-text">Hetavi Rampariya</span></h2>
+          <h2 class="view-title">About <span class="gradient-text">Me</span></h2>
           <p class="view-subtitle">Learning • Building • Growing</p>
         </div>
 
@@ -248,47 +304,49 @@
           <!-- Left: Narrative Text Card -->
           <div class="about-main-card glass-card">
             <div class="about-card-badge">
-              <i class="fa-solid fa-user-astronaut text-purple"></i> <span>Developer Profile</span>
+              <i class="fa-solid fa-user-astronaut text-purple"></i> <span>Professional Summary</span>
             </div>
-            <h3 class="about-heading">Engineering clean software and intelligent web systems.</h3>
+            
+            <h3 class="about-heading">Final-year AI & Data Science student building full-stack web applications and AI tools.</h3>
             
             <div class="about-paragraphs">
               <p>
-                I am a final-year <strong>B.Tech student in Artificial Intelligence & Data Science</strong> at K. K. Wagh Institute of Engineering Education and Research (KKWIEER), Nashik, with a current academic record of <strong>8.17 CGPA</strong>.
+                Final-year B.Tech student in Artificial Intelligence & Data Science at K. K. Wagh Institute of Engineering Education and Research (KKWIEER), Nashik, with hands-on experience building full-stack applications in <strong>Python, Flask, and SQL</strong>.
               </p>
               <p>
-                My passion lies in <strong>software development, backend engineering, and applied artificial intelligence</strong>. I love turning complex logic into structured, user-centric web applications and experimenting with NLP models, relational/NoSQL databases, and intelligent workflow automation.
+                Backed by a strong foundation in <strong>Data Structures & Algorithms, Object-Oriented Programming, DBMS, and Operating Systems</strong>, applied across projects spanning CRUD-based web systems, hybrid database architectures (MySQL & MongoDB), and NLP/RAG-based applications.
               </p>
               <p>
-                Whether architecting a dual-database tailor platform like <strong>TailorFlow</strong> or building vector-search legal contract analysis with <strong>ContractLens</strong>, I focus on clean code, strong problem-solving fundamentals, and intuitive user experiences.
+                Comfortable working across the stack, from backend API design to database integration, with clear written and verbal communication.
               </p>
             </div>
 
-            <div class="about-highlights-row">
-              <div class="hl-item"><i class="fa-solid fa-check text-cyan"></i> Problem Solving & DSA</div>
-              <div class="hl-item"><i class="fa-solid fa-check text-cyan"></i> Full-Stack & REST APIs</div>
-              <div class="hl-item"><i class="fa-solid fa-check text-cyan"></i> Applied ML & NLP</div>
+            <div class="about-focus-pills">
+              <span class="focus-pill"><i class="fa-solid fa-server text-purple"></i> Python & Flask Backend</span>
+              <span class="focus-pill"><i class="fa-solid fa-database text-cyan"></i> MySQL & MongoDB</span>
+              <span class="focus-pill"><i class="fa-solid fa-brain text-yellow"></i> NLP, RAG & LLMs</span>
+              <span class="focus-pill"><i class="fa-solid fa-code text-green"></i> DSA & OOP</span>
             </div>
           </div>
 
-          <!-- Right: Focus & Career Direction Cards -->
+          <!-- Right: Summary Cards -->
           <div class="about-cards-col">
             
             <div class="info-card glass-card">
               <div class="info-icon purple"><i class="fa-solid fa-star"></i></div>
               <div class="info-content">
-                <span class="info-label">Academic CGPA</span>
-                <h4 class="info-value text-yellow">8.17 / 10.0</h4>
-                <p class="info-detail">K. K. Wagh Institute (KKWIEER), Nashik</p>
+                <span class="info-label">Academic Standing</span>
+                <h4 class="info-value text-yellow">8.17 CGPA</h4>
+                <p class="info-detail">KKWIEER, Nashik (2023 – Present)</p>
               </div>
             </div>
 
             <div class="info-card glass-card">
               <div class="info-icon cyan"><i class="fa-solid fa-graduation-cap"></i></div>
               <div class="info-content">
-                <span class="info-label">Education Overview</span>
+                <span class="info-label">Education</span>
                 <h4 class="info-value">B.Tech AI & DS</h4>
-                <p class="info-detail">Artificial Intelligence & Data Science (2023 – Present)</p>
+                <p class="info-detail">Artificial Intelligence & Data Science</p>
               </div>
             </div>
 
@@ -297,16 +355,16 @@
               <div class="info-content">
                 <span class="info-label">Career Direction</span>
                 <h4 class="info-value">Aspiring Software Dev</h4>
-                <p class="info-detail">Backend Systems, Clean APIs & Intelligent Tools</p>
+                <p class="info-detail">Open for Software & AI Internship Roles</p>
               </div>
             </div>
 
             <div class="info-card glass-card">
-              <div class="info-icon cyan"><i class="fa-solid fa-code-fork"></i></div>
+              <div class="info-icon cyan"><i class="fa-solid fa-cubes"></i></div>
               <div class="info-content">
-                <span class="info-label">What I Enjoy Building</span>
-                <h4 class="info-value">Scalable Web Apps</h4>
-                <p class="info-detail">Full-Stack Platforms, NLP Tools & Predictive Analytics</p>
+                <span class="info-label">Core Projects</span>
+                <h4 class="info-value">Featured Work</h4>
+                <p class="info-detail">TailorFlow • ContractLens • SmartShelf</p>
               </div>
             </div>
 
@@ -318,7 +376,7 @@
     </div>
 
     <!-- ===============================================================
-         VIEW 3: EDUCATION (/education)
+         VIEW 3: EDUCATION (/education) — CLEAN & SCANNABLE
          =============================================================== -->
     <div class="portfolio-view" id="view-education" data-view="education">
       <div class="view-container">
@@ -326,102 +384,67 @@
         <div class="view-header">
           <span class="view-tag">ACADEMIC JOURNEY</span>
           <h2 class="view-title">Education & <span class="gradient-text">Qualifications</span></h2>
-          <p class="view-subtitle">Formal academic training in Artificial Intelligence & Computer Science.</p>
+          <p class="view-subtitle">Formal academic background and degree qualifications.</p>
         </div>
 
-        <div class="education-timeline">
+        <div class="education-clean-list">
           
-          <!-- Education 1: B.Tech -->
-          <div class="edu-card glass-card">
-            <div class="edu-header">
-              <div class="edu-icon-box purple">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <div class="edu-title-group">
-                <span class="edu-period"><i class="fa-regular fa-calendar"></i> 2023 – Present (Final Year)</span>
-                <h3 class="edu-degree">Bachelor of Technology in Artificial Intelligence & Data Science</h3>
-                <h4 class="edu-school">K. K. Wagh Institute of Engineering Education and Research (KKWIEER), Nashik</h4>
-              </div>
-              <div class="edu-grade-badge">
-                <span class="grade-label">Current CGPA</span>
-                <span class="grade-score text-yellow">8.17 / 10.0</span>
-              </div>
+          <!-- Card 1: B.Tech -->
+          <div class="edu-clean-card glass-card">
+            <div class="ecc-badge-row">
+              <span class="ecc-year purple"><i class="fa-regular fa-calendar"></i> 2023 – PRESENT</span>
+              <span class="ecc-score-badge text-yellow"><i class="fa-solid fa-star"></i> CGPA: 8.17</span>
+            </div>
+            
+            <div class="ecc-main">
+              <h3 class="ecc-degree">B.Tech in Artificial Intelligence & Data Science</h3>
+              <h4 class="ecc-institution"><i class="fa-solid fa-building-columns text-purple"></i> K. K. Wagh Institute of Engineering Education and Research, Nashik</h4>
             </div>
 
-            <div class="edu-body">
-              <p class="edu-desc">
-                Engaged in comprehensive coursework covering core computer science principles, software design, mathematical foundations, and advanced data-driven systems.
-              </p>
-              <div class="edu-coursework">
-                <span class="coursework-title"><i class="fa-solid fa-book-bookmark text-purple"></i> Key Coursework:</span>
-                <div class="course-tags">
-                  <span class="c-tag">Data Structures & Algorithms</span>
-                  <span class="c-tag">Object-Oriented Programming (OOP)</span>
-                  <span class="c-tag">Database Management Systems (DBMS)</span>
-                  <span class="c-tag">Machine Learning & Neural Networks</span>
-                  <span class="c-tag">Artificial Intelligence</span>
-                  <span class="c-tag">Operating Systems</span>
-                  <span class="c-tag">Computer Networks</span>
-                  <span class="c-tag">Python & C++ Programming</span>
-                </div>
-              </div>
+            <div class="ecc-tags">
+              <span class="course-chip">Data Structures & Algorithms</span>
+              <span class="course-chip">Object-Oriented Programming</span>
+              <span class="course-chip">DBMS</span>
+              <span class="course-chip">Operating Systems</span>
+              <span class="course-chip">Computer Networks</span>
             </div>
           </div>
 
-          <!-- Education 2: HSC -->
-          <div class="edu-card glass-card">
-            <div class="edu-header">
-              <div class="edu-icon-box cyan">
-                <i class="fa-solid fa-school"></i>
-              </div>
-              <div class="edu-title-group">
-                <span class="edu-period"><i class="fa-regular fa-calendar"></i> 2021 – 2023</span>
-                <h3 class="edu-degree">Higher Secondary Certificate (HSC) – Science</h3>
-                <h4 class="edu-school">H. P. T. Arts and R. Y. K. Science College, Nashik</h4>
-              </div>
-              <div class="edu-grade-badge">
-                <span class="grade-label">Score</span>
-                <span class="grade-score text-cyan">65%</span>
-              </div>
+          <!-- Card 2: HSC -->
+          <div class="edu-clean-card glass-card">
+            <div class="ecc-badge-row">
+              <span class="ecc-year cyan"><i class="fa-regular fa-calendar"></i> 2021 – 2023</span>
+              <span class="ecc-score-badge text-cyan"><i class="fa-solid fa-chart-simple"></i> HSC (12th) – Science: 65%</span>
+            </div>
+            
+            <div class="ecc-main">
+              <h3 class="ecc-degree">H. P. T. Arts and R. Y. K. Science College</h3>
+              <h4 class="ecc-institution"><i class="fa-solid fa-building-columns text-cyan"></i> Nashik, Maharashtra</h4>
             </div>
 
-            <div class="edu-body">
-              <p class="edu-desc">
-                Completed secondary education with focused study in STEM disciplines, establishing mathematical, analytical, and computational foundations.
-              </p>
-              <div class="edu-coursework">
-                <span class="coursework-title"><i class="fa-solid fa-book-bookmark text-cyan"></i> Core Subjects:</span>
-                <div class="course-tags">
-                  <span class="c-tag">Physics</span>
-                  <span class="c-tag">Chemistry</span>
-                  <span class="c-tag">Mathematics</span>
-                  <span class="c-tag">Information Technology</span>
-                </div>
-              </div>
+            <div class="ecc-tags">
+              <span class="course-chip">Physics</span>
+              <span class="course-chip">Chemistry</span>
+              <span class="course-chip">Mathematics</span>
+              <span class="course-chip">Information Technology</span>
             </div>
           </div>
 
-          <!-- Education 3: SSC -->
-          <div class="edu-card glass-card">
-            <div class="edu-header">
-              <div class="edu-icon-box purple">
-                <i class="fa-solid fa-award"></i>
-              </div>
-              <div class="edu-title-group">
-                <span class="edu-period"><i class="fa-regular fa-calendar"></i> 2021</span>
-                <h3 class="edu-degree">Secondary School Certificate (SSC)</h3>
-                <h4 class="edu-school">Nashik, Maharashtra</h4>
-              </div>
-              <div class="edu-grade-badge">
-                <span class="grade-label">Score</span>
-                <span class="grade-score text-green">92%</span>
-              </div>
+          <!-- Card 3: SSC -->
+          <div class="edu-clean-card glass-card">
+            <div class="ecc-badge-row">
+              <span class="ecc-year green"><i class="fa-regular fa-calendar"></i> 2021</span>
+              <span class="ecc-score-badge text-green"><i class="fa-solid fa-award"></i> SSC (10th): 92%</span>
+            </div>
+            
+            <div class="ecc-main">
+              <h3 class="ecc-degree">M. S. Kothari Academy</h3>
+              <h4 class="ecc-institution"><i class="fa-solid fa-building-columns text-green"></i> Nashik, Maharashtra</h4>
             </div>
 
-            <div class="edu-body">
-              <p class="edu-desc">
-                Completed high school with Distinction (92%), demonstrating strong analytical and academic performance in science and mathematics.
-              </p>
+            <div class="ecc-tags">
+              <span class="course-chip">Science & Mathematics</span>
+              <span class="course-chip">Secondary School Certificate</span>
             </div>
           </div>
 
@@ -444,197 +467,106 @@
 
         <div class="skills-categories-grid">
           
-          <!-- Languages -->
+          <!-- Programming Languages -->
           <div class="skill-group-card glass-card">
             <div class="skill-group-header">
               <div class="sg-icon purple"><i class="fa-solid fa-code"></i></div>
               <div>
                 <h3 class="sg-title">Programming Languages</h3>
-                <span class="sg-count">6 Core Languages</span>
+                <span class="sg-count">Python, C++, SQL</span>
               </div>
             </div>
             <div class="skills-chip-cluster">
-              <div class="skill-item">
-                <i class="devicon-python-plain colored"></i>
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-cplusplus-plain colored"></i>
-                <span>C++</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-javascript-plain colored"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-database text-cyan"></i>
-                <span>SQL</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-html5-plain colored"></i>
-                <span>HTML5</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-css3-plain colored"></i>
-                <span>CSS3</span>
-              </div>
+              <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+              <div class="skill-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+              <div class="skill-item"><i class="fa-solid fa-database text-cyan"></i><span>SQL</span></div>
             </div>
           </div>
 
-          <!-- Frameworks & Backend -->
+          <!-- Web Development & Backend -->
           <div class="skill-group-card glass-card">
             <div class="skill-group-header">
               <div class="sg-icon cyan"><i class="fa-solid fa-server"></i></div>
               <div>
-                <h3 class="sg-title">Frameworks & Backend</h3>
-                <span class="sg-count">Web & API Architecture</span>
+                <h3 class="sg-title">Web Development & Backend</h3>
+                <span class="sg-count">Flask, REST APIs, HTML/CSS/JS</span>
               </div>
             </div>
             <div class="skills-chip-cluster">
-              <div class="skill-item">
-                <i class="devicon-flask-original"></i>
-                <span>Flask</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-chart-simple text-purple"></i>
-                <span>Streamlit</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-network-wired text-cyan"></i>
-                <span>RESTful APIs</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-bolt text-yellow"></i>
-                <span>CRUD Architecture</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- AI & Data Science -->
-          <div class="skill-group-card glass-card">
-            <div class="skill-group-header">
-              <div class="sg-icon purple"><i class="fa-solid fa-brain"></i></div>
-              <div>
-                <h3 class="sg-title">AI & Data Science</h3>
-                <span class="sg-count">ML, NLP & Analytics</span>
-              </div>
-            </div>
-            <div class="skills-chip-cluster">
-              <div class="skill-item">
-                <i class="devicon-tensorflow-original colored"></i>
-                <span>TensorFlow</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-scikitlearn-plain colored"></i>
-                <span>Scikit-Learn</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-pandas-original colored"></i>
-                <span>Pandas</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-numpy-original colored"></i>
-                <span>NumPy</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-chart-line text-cyan"></i>
-                <span>Matplotlib</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-cubes text-purple"></i>
-                <span>FAISS & spaCy</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-tree text-green"></i>
-                <span>XGBoost</span>
-              </div>
+              <div class="skill-item"><i class="devicon-flask-original"></i><span>Flask</span></div>
+              <div class="skill-item"><i class="fa-solid fa-network-wired text-cyan"></i><span>REST APIs</span></div>
+              <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+              <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+              <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
             </div>
           </div>
 
           <!-- Databases -->
           <div class="skill-group-card glass-card">
             <div class="skill-group-header">
-              <div class="sg-icon cyan"><i class="fa-solid fa-database"></i></div>
+              <div class="sg-icon purple"><i class="fa-solid fa-database"></i></div>
               <div>
                 <h3 class="sg-title">Databases</h3>
-                <span class="sg-count">Relational & NoSQL</span>
+                <span class="sg-count">Relational & Document</span>
               </div>
             </div>
             <div class="skills-chip-cluster">
-              <div class="skill-item">
-                <i class="devicon-mysql-plain colored"></i>
-                <span>MySQL</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-mongodb-plain colored"></i>
-                <span>MongoDB</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-diagram-project text-purple"></i>
-                <span>Schema Design</span>
-              </div>
+              <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+              <div class="skill-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
             </div>
           </div>
 
-          <!-- Tools & Core CS -->
+          <!-- Libraries & Frameworks -->
           <div class="skill-group-card glass-card">
             <div class="skill-group-header">
-              <div class="sg-icon purple"><i class="fa-solid fa-toolbox"></i></div>
+              <div class="sg-icon cyan"><i class="fa-solid fa-brain"></i></div>
               <div>
-                <h3 class="sg-title">Developer Tools</h3>
-                <span class="sg-count">Environment & Versioning</span>
+                <h3 class="sg-title">Libraries & Frameworks</h3>
+                <span class="sg-count">Data Science, ML & NLP</span>
               </div>
             </div>
             <div class="skills-chip-cluster">
-              <div class="skill-item">
-                <i class="devicon-git-plain colored"></i>
-                <span>Git</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-github-original"></i>
-                <span>GitHub</span>
-              </div>
-              <div class="skill-item">
-                <i class="devicon-vscode-plain colored"></i>
-                <span>VS Code</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-chart-pie text-yellow"></i>
-                <span>Power BI</span>
-              </div>
+              <div class="skill-item"><i class="devicon-pandas-original colored"></i><span>Pandas</span></div>
+              <div class="skill-item"><i class="devicon-numpy-original colored"></i><span>NumPy</span></div>
+              <div class="skill-item"><i class="devicon-scikitlearn-plain colored"></i><span>Scikit-learn</span></div>
+              <div class="skill-item"><i class="fa-solid fa-cubes text-purple"></i><span>spaCy</span></div>
+              <div class="skill-item"><i class="fa-solid fa-vector-square text-cyan"></i><span>FAISS</span></div>
+              <div class="skill-item"><i class="fa-solid fa-tree text-green"></i><span>XGBoost</span></div>
+              <div class="skill-item"><i class="fa-solid fa-chart-simple text-purple"></i><span>Streamlit</span></div>
             </div>
           </div>
 
-          <!-- Core CS Fundamentals -->
+          <!-- Core CS Concepts -->
           <div class="skill-group-card glass-card">
             <div class="skill-group-header">
-              <div class="sg-icon cyan"><i class="fa-solid fa-sitemap"></i></div>
+              <div class="sg-icon purple"><i class="fa-solid fa-sitemap"></i></div>
               <div>
-                <h3 class="sg-title">Core Computer Science</h3>
-                <span class="sg-count">Engineering Fundamentals</span>
+                <h3 class="sg-title">Core CS Concepts</h3>
+                <span class="sg-count">Computer Science Foundations</span>
               </div>
             </div>
             <div class="skills-chip-cluster">
-              <div class="skill-item">
-                <i class="fa-solid fa-network-wired text-purple"></i>
-                <span>DSA</span>
+              <div class="skill-item"><i class="fa-solid fa-network-wired text-purple"></i><span>Data Structures & Algorithms</span></div>
+              <div class="skill-item"><i class="fa-solid fa-cubes-stacked text-cyan"></i><span>OOP</span></div>
+              <div class="skill-item"><i class="fa-solid fa-database text-yellow"></i><span>DBMS</span></div>
+              <div class="skill-item"><i class="fa-solid fa-microchip text-green"></i><span>Operating Systems</span></div>
+              <div class="skill-item"><i class="fa-solid fa-wifi text-purple"></i><span>Computer Networks</span></div>
+            </div>
+          </div>
+
+          <!-- Tools & Version Control -->
+          <div class="skill-group-card glass-card">
+            <div class="skill-group-header">
+              <div class="sg-icon cyan"><i class="fa-solid fa-toolbox"></i></div>
+              <div>
+                <h3 class="sg-title">Tools & Version Control</h3>
+                <span class="sg-count">Developer Environment</span>
               </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-cubes-stacked text-cyan"></i>
-                <span>OOP</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-database text-yellow"></i>
-                <span>DBMS</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-microchip text-green"></i>
-                <span>Operating Systems</span>
-              </div>
-              <div class="skill-item">
-                <i class="fa-solid fa-wifi text-purple"></i>
-                <span>Computer Networks</span>
-              </div>
+            </div>
+            <div class="skills-chip-cluster">
+              <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+              <div class="skill-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+              <div class="skill-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
             </div>
           </div>
 
@@ -657,7 +589,40 @@
 
         <div class="projects-grid">
 
-          <!-- Project 1: ContractLens -->
+          <!-- Project 1: TailorFlow -->
+          <div class="project-card glass-card">
+            <div class="project-media">
+              <img src="assets/images/tailorflow.png" alt="TailorFlow Full-Stack Smart Tailor Management System" loading="lazy">
+              <span class="project-badge">Full-Stack</span>
+            </div>
+            <div class="project-content">
+              <div class="project-meta-row">
+                <h3 class="project-name">TailorFlow | Smart Tailor Management System</h3>
+                <span class="project-status active">Jul 2026 – Present</span>
+              </div>
+              <p class="project-desc">
+                Full-stack tailoring management system with a hybrid MySQL & MongoDB layer for customer records, measurement tracking, orders, and delivery pipelines.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
+                <span class="tech-tag"><i class="devicon-flask-original"></i> Flask</span>
+                <span class="tech-tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                <span class="tech-tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Git</span>
+              </div>
+              <div class="project-actions-bar">
+                <a href="https://github.com/Hetavi2102/TailorFlow" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                </a>
+                <button class="btn btn-glass btn-sm project-modal-btn" data-project="tailorflow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Deep Dive</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: ContractLens -->
           <div class="project-card glass-card">
             <div class="project-media">
               <img src="assets/images/contractlens.png" alt="ContractLens AI Legal Contract Assistant" loading="lazy">
@@ -665,15 +630,16 @@
             </div>
             <div class="project-content">
               <div class="project-meta-row">
-                <h3 class="project-name">ContractLens (LegalEase)</h3>
-                <span class="project-status active">Active</span>
+                <h3 class="project-name">ContractLens | Privacy-Safe AI for High-Risk Clauses</h3>
+                <span class="project-status active">Jul 2026 – Present</span>
               </div>
               <p class="project-desc">
-                Privacy-safe AI-powered legal contract analyzer that processes agreements, flags high-risk clauses & liabilities, and provides plain-language summaries using FAISS vector indexing.
+                AI-powered legal contract analysis platform using NLP, RAG, LLMs, and FAISS vector embeddings for clause extraction, summarization, and risk classification.
               </p>
               <div class="project-tech-tags">
                 <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
                 <span class="tech-tag"><i class="devicon-flask-original"></i> Flask</span>
+                <span class="tech-tag">PyMuPDF</span>
                 <span class="tech-tag">spaCy</span>
                 <span class="tech-tag">FAISS</span>
                 <span class="tech-tag">LLM API</span>
@@ -689,38 +655,6 @@
             </div>
           </div>
 
-          <!-- Project 2: TailorFlow -->
-          <div class="project-card glass-card">
-            <div class="project-media">
-              <img src="assets/images/tailorflow.png" alt="TailorFlow Smart Tailor Management Platform" loading="lazy">
-              <span class="project-badge">Full-Stack</span>
-            </div>
-            <div class="project-content">
-              <div class="project-meta-row">
-                <h3 class="project-name">TailorFlow</h3>
-                <span class="project-status active">Featured</span>
-              </div>
-              <p class="project-desc">
-                Smart bespoke tailoring business management system managing customer profiles, custom measurement schemas, fabric inventories, and order delivery workflows with hybrid databases.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
-                <span class="tech-tag"><i class="devicon-flask-original"></i> Flask</span>
-                <span class="tech-tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
-                <span class="tech-tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
-                <span class="tech-tag">JavaScript</span>
-              </div>
-              <div class="project-actions-bar">
-                <a href="https://github.com/Hetavi2102/TailorFlow" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
-                </a>
-                <button class="btn btn-glass btn-sm project-modal-btn" data-project="tailorflow">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Deep Dive</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
           <!-- Project 3: SmartShelf -->
           <div class="project-card glass-card">
             <div class="project-media">
@@ -729,11 +663,11 @@
             </div>
             <div class="project-content">
               <div class="project-meta-row">
-                <h3 class="project-name">SmartShelf</h3>
-                <span class="project-status done">Completed</span>
+                <h3 class="project-name">SmartShelf | Inventory Management & Optimization</h3>
+                <span class="project-status done">Sep 2025 – Nov 2025</span>
               </div>
               <p class="project-desc">
-                Machine learning-driven inventory optimization dashboard tracking warehouse stock levels and forecasting future item demand using historical sales trends and XGBoost models.
+                Machine learning-driven inventory optimization dashboard tracking warehouse stock levels and applying XGBoost demand forecasting to prevent stockouts.
               </p>
               <div class="project-tech-tags">
                 <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
@@ -741,6 +675,7 @@
                 <span class="tech-tag">XGBoost</span>
                 <span class="tech-tag">Pandas</span>
                 <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Scikit-learn</span>
               </div>
               <div class="project-actions-bar">
                 <a href="https://github.com/Hetavi2102/SmartShelf" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
@@ -761,11 +696,11 @@
             </div>
             <div class="project-content">
               <div class="project-meta-row">
-                <h3 class="project-name">AI Bill Decoder</h3>
-                <span class="project-status active">Active</span>
+                <h3 class="project-name">AI Bill Decoder | Automated Invoice Analyzer</h3>
+                <span class="project-status active">Featured</span>
               </div>
               <p class="project-desc">
-                Automated invoice and receipt analysis application using computer vision OCR to extract charges and GenAI to translate cryptic billing line-items into straightforward summaries.
+                Automated invoice and receipt analysis application using computer vision OCR to extract charges and GenAI to translate cryptic billing line-items.
               </p>
               <div class="project-tech-tags">
                 <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
@@ -798,57 +733,49 @@
         
         <div class="view-header">
           <span class="view-tag">CREDENTIALS & BADGES</span>
-          <h2 class="view-title">Certifications & <span class="gradient-text">Achievements</span></h2>
-          <p class="view-subtitle">Verified industry credentials and recognized milestones.</p>
+          <h2 class="view-title">Certifications</h2>
+          <p class="view-subtitle">Verified industry credentials and competitive skill badges.</p>
         </div>
 
         <div class="certifications-grid">
           
           <div class="cert-card glass-card">
-            <div class="cert-icon-box aws">
-              <i class="fa-brands fa-aws"></i>
-            </div>
+            <div class="cert-icon-box aws"><i class="fa-brands fa-aws"></i></div>
             <div class="cert-details">
               <span class="cert-category">Cloud Certification</span>
               <h3 class="cert-name">AWS Cloud Quest: Cloud Practitioner</h3>
               <p class="cert-issuer">Amazon Web Services (AWS)</p>
-              <p class="cert-desc">Hands-on verification of cloud architecture, compute, storage, security, and networking concepts.</p>
+              <p class="cert-desc">Hands-on verification of cloud computing, security, architecture, and storage principles.</p>
             </div>
           </div>
 
           <div class="cert-card glass-card">
-            <div class="cert-icon-box hr">
-              <i class="fa-brands fa-hackerrank"></i>
-            </div>
+            <div class="cert-icon-box hr"><i class="fa-brands fa-hackerrank"></i></div>
             <div class="cert-details">
               <span class="cert-category">Verified Skill Badge</span>
               <h3 class="cert-name">Python Skill Certification</h3>
               <p class="cert-issuer">HackerRank</p>
-              <p class="cert-desc">Verified proficiency in core Python syntax, algorithms, data structures, and functional programming.</p>
+              <p class="cert-desc">Verified proficiency in core Python syntax, algorithms, data structures, and problem solving.</p>
             </div>
           </div>
 
           <div class="cert-card glass-card">
-            <div class="cert-icon-box hr">
-              <i class="fa-solid fa-database"></i>
-            </div>
+            <div class="cert-icon-box hr"><i class="fa-solid fa-database"></i></div>
             <div class="cert-details">
               <span class="cert-category">Verified Skill Badge</span>
-              <h3 class="cert-name">SQL Skill Certification</h3>
+              <h3 class="cert-name">SQL (Basic) Skill Certification</h3>
               <p class="cert-issuer">HackerRank</p>
-              <p class="cert-desc">Assessed proficiency in relational queries, joins, aggregations, subqueries, and database problem-solving.</p>
+              <p class="cert-desc">Assessed proficiency in relational queries, joins, aggregations, and database operations.</p>
             </div>
           </div>
 
           <div class="cert-card glass-card">
-            <div class="cert-icon-box academic">
-              <i class="fa-solid fa-award"></i>
-            </div>
+            <div class="cert-icon-box academic"><i class="fa-solid fa-award"></i></div>
             <div class="cert-details">
-              <span class="cert-category">Academic Milestone</span>
-              <h3 class="cert-name">Consistent 8.17 CGPA in B.Tech</h3>
-              <p class="cert-issuer">K. K. Wagh Institute (KKWIEER), Nashik</p>
-              <p class="cert-desc">Strong academic standing in Artificial Intelligence & Data Science Engineering curriculum.</p>
+              <span class="cert-category">Academic Achievement</span>
+              <h3 class="cert-name">B.Tech Academic Standing (8.17 CGPA)</h3>
+              <p class="cert-issuer">KKWIEER, Nashik</p>
+              <p class="cert-desc">Consistent academic performance in Artificial Intelligence & Data Science Engineering.</p>
             </div>
           </div>
 
@@ -865,50 +792,44 @@
         
         <div class="view-header">
           <span class="view-tag">LEADERSHIP & ENGAGEMENT</span>
-          <h2 class="view-title">Activities & <span class="gradient-text">Involvement</span></h2>
-          <p class="view-subtitle">Extracurricular technical activities, leadership roles, and hackathons.</p>
+          <h2 class="view-title">Leadership & <span class="gradient-text">Activities</span></h2>
+          <p class="view-subtitle">Student leadership roles, hackathon participation, and technical events.</p>
         </div>
 
         <div class="activities-grid">
           
           <div class="activity-card glass-card">
-            <div class="activity-icon-box csi">
-              <i class="fa-solid fa-users-gear"></i>
-            </div>
+            <div class="activity-icon-box csi"><i class="fa-solid fa-users-gear"></i></div>
             <div class="activity-info">
               <span class="activity-period"><i class="fa-regular fa-calendar"></i> 2025 – 2026</span>
-              <h3 class="activity-title">CSI Core Committee Member</h3>
-              <h4 class="activity-org">Computer Society of India (KKWIEER Student Branch)</h4>
+              <h3 class="activity-title">Core Member, Computer Society of India (CSI)</h3>
+              <h4 class="activity-org">KKWIEER Student Branch</h4>
               <p class="activity-desc">
-                Contributed to organizing technical symposiums, hands-on programming workshops, coding challenges, and collaborative student-led learning events for the engineering community.
+                Organizing technical workshops, programming contests, and student-led learning events for the engineering department.
               </p>
             </div>
           </div>
 
           <div class="activity-card glass-card">
-            <div class="activity-icon-box hack">
-              <i class="fa-solid fa-trophy"></i>
-            </div>
+            <div class="activity-icon-box hack"><i class="fa-solid fa-trophy"></i></div>
             <div class="activity-info">
               <span class="activity-period"><i class="fa-regular fa-calendar"></i> Hackathon Event</span>
-              <h3 class="activity-title">Buildathon Hackathon Participant</h3>
+              <h3 class="activity-title">Participant, Buildathon Hackathon</h3>
               <h4 class="activity-org">GGSCOE&RC, Nashik</h4>
               <p class="activity-desc">
-                Collaborated in an intensive, time-bound hackathon building functional software prototypes and applying fast-paced problem decomposition under pressure.
+                Collaborated in an intensive hackathon building functional software prototypes under timed engineering constraints.
               </p>
             </div>
           </div>
 
           <div class="activity-card glass-card">
-            <div class="activity-icon-box myntra">
-              <i class="fa-solid fa-laptop-code"></i>
-            </div>
+            <div class="activity-icon-box myntra"><i class="fa-solid fa-laptop-code"></i></div>
             <div class="activity-info">
               <span class="activity-period"><i class="fa-regular fa-calendar"></i> 2024</span>
-              <h3 class="activity-title">Myntra HackerRamp 2024</h3>
+              <h3 class="activity-title">Participant, Myntra HackerRamp 2024</h3>
               <h4 class="activity-org">National Technical Hackathon</h4>
               <p class="activity-desc">
-                Participated in the national-level multi-stage engineering hackathon solving challenging product and algorithmic problems.
+                Participated in the national-level engineering hackathon solving challenging algorithmic and product design problems.
               </p>
             </div>
           </div>
@@ -926,7 +847,7 @@
         
         <div class="view-header">
           <span class="view-tag">GET IN TOUCH</span>
-          <h2 class="view-title">Let's <span class="gradient-text">Connect</span></h2>
+          <h2 class="view-title">Contact <span class="gradient-text">Me</span></h2>
           <p class="view-subtitle">Open for software engineering internships, entry roles, and collaborative AI projects.</p>
         </div>
 
@@ -935,9 +856,9 @@
           <!-- Left: Direct Channels -->
           <div class="contact-info-card glass-card">
             <div class="contact-intro">
-              <h3 class="ci-heading">Let's discuss opportunities.</h3>
+              <h3 class="ci-heading">Let's connect.</h3>
               <p class="ci-text">
-                Whether you have an internship opportunity, full-time junior role, project question, or simply want to connect, feel free to reach out directly through any of these platforms:
+                Whether you have an internship opportunity, software role, or project inquiry, feel free to reach out directly through any of these platforms:
               </p>
             </div>
 
@@ -1049,7 +970,7 @@
   </button>
 
   <!-- =================================================================
-       MODAL: ATS RESUME VIEWER (WITH PRINT / PDF)
+       MODAL: ATS RESUME VIEWER (EXACT MATCH WITH PROVIDED PDF)
        ================================================================= -->
   <div class="modal" id="resume-modal">
     <div class="modal-overlay"></div>
@@ -1061,116 +982,146 @@
       <div class="modal-body resume-body">
         <div class="resume-view">
           <div class="resume-paper">
+            
+            <!-- Resume Header -->
             <header class="resume-paper-header">
-              <h2>Hetavi Rampariya</h2>
+              <h2>HETAVI RAMPARIYA</h2>
               <p class="resume-contact-line">
+                Nashik, Maharashtra &nbsp;|&nbsp; 
                 <i class="fa-solid fa-envelope"></i> rampariyahetavi@gmail.com &nbsp;|&nbsp; 
                 <i class="fa-brands fa-linkedin"></i> linkedin.com/in/hetavi-rampariya &nbsp;|&nbsp; 
-                <i class="fa-brands fa-github"></i> github.com/Hetavi2102 &nbsp;|&nbsp; 
-                <i class="fa-solid fa-location-dot"></i> Nashik, Maharashtra
+                <i class="fa-brands fa-github"></i> github.com/Hetavi2102
               </p>
             </header>
             
-            <p class="resume-summary">
-              Final-year B.Tech student in Artificial Intelligence & Data Science (8.17 CGPA) with hands-on experience in Python, SQL, Flask, and full-stack web development. Passionate about building scalable software and AI-powered applications, backed by strong fundamentals in DSA, DBMS, and problem-solving.
-            </p>
+            <!-- Professional Summary -->
+            <section class="resume-section">
+              <h3>PROFESSIONAL SUMMARY</h3>
+              <hr>
+              <p class="resume-summary">
+                Final-year B.Tech student in Artificial Intelligence & Data Science with hands-on experience building full-stack applications in Python, Flask, and SQL. Strong foundation in Data Structures & Algorithms, Object-Oriented Programming, DBMS, and Operating Systems, applied across projects spanning CRUD-based web systems, hybrid database architectures, and NLP/RAG-based applications. Comfortable working across the stack, from backend API design to database integration, with clear written and verbal communication.
+              </p>
+            </section>
 
+            <!-- Education -->
             <section class="resume-section">
               <h3>EDUCATION</h3>
               <hr>
               <div class="resume-entry">
                 <div class="resume-entry-header">
                   <strong>K. K. Wagh Institute of Engineering Education and Research</strong>
-                  <span>Nashik, IN</span>
+                  <span>Nashik</span>
                 </div>
                 <div class="resume-entry-sub">
-                  <em>B.Tech, Artificial Intelligence & Data Science (CGPA: 8.17)</em>
+                  <em>B.Tech in Artificial Intelligence & Data Science — CGPA: 8.17</em>
                   <span>2023 – Present</span>
                 </div>
               </div>
               <div class="resume-entry">
                 <div class="resume-entry-header">
                   <strong>H. P. T. Arts and R. Y. K. Science College</strong>
-                  <span>Nashik, IN</span>
+                  <span>Nashik</span>
                 </div>
                 <div class="resume-entry-sub">
-                  <em>HSC (12th) – Science (Percentage: 65%)</em>
+                  <em>HSC (12th) – Science — 65%</em>
                   <span>2021 – 2023</span>
                 </div>
               </div>
               <div class="resume-entry">
                 <div class="resume-entry-header">
-                  <strong>Secondary School Certificate (SSC)</strong>
-                  <span>Nashik, IN</span>
+                  <strong>M. S. Kothari Academy</strong>
+                  <span>Nashik</span>
                 </div>
                 <div class="resume-entry-sub">
-                  <em>SSC – Science & Mathematics (Percentage: 92%)</em>
+                  <em>SSC (10th) — 92%</em>
                   <span>2021</span>
                 </div>
               </div>
             </section>
 
+            <!-- Projects -->
             <section class="resume-section">
-              <h3>FEATURED PROJECTS</h3>
+              <h3>PROJECTS</h3>
               <hr>
+              
+              <!-- TailorFlow -->
               <div class="resume-entry">
                 <div class="resume-entry-header">
-                  <strong>ContractLens | AI Legal Contract Analyzer</strong>
+                  <strong>TailorFlow | Full-Stack Smart Tailor Management System</strong>
                   <span>Jul 2026 – Present</span>
                 </div>
-                <p><em>Python, Flask, spaCy, FAISS, PyMuPDF, LLM API, JavaScript</em></p>
                 <ul>
-                  <li>Developed an AI web application automating legal contract analysis via NLP and vector search.</li>
-                  <li>Built high-risk clause identification and contract summarization powered by LLMs.</li>
-                  <li>Implemented secure PDF processing and semantic search indexing with FAISS.</li>
+                  <li>Developing a Flask backend that handles customer management, order tracking, and measurement records through structured CRUD operations.</li>
+                  <li>Integrating a hybrid database layer using MySQL for core structured business data (customers, orders) and MongoDB for dynamic order-tracking and activity logs.</li>
+                  <li>Coordinating MySQL and MongoDB through a unified Flask backend to streamline tailoring operations, keeping relational business data and document-based tracking data in sync across the application.</li>
                 </ul>
+                <p class="resume-tech-line"><em>Tech Stack: Python, Flask, MySQL, MongoDB, HTML, CSS, JavaScript, Git, GitHub</em></p>
               </div>
+
+              <!-- ContractLens -->
               <div class="resume-entry">
                 <div class="resume-entry-header">
-                  <strong>TailorFlow | Full-Stack Smart Tailor Management Platform</strong>
+                  <strong>ContractLens | Privacy-Safe AI for Detecting High-Risk Clauses in Agreements</strong>
                   <span>Jul 2026 – Present</span>
                 </div>
-                <p><em>Python, Flask, MySQL, MongoDB, JavaScript, HTML5/CSS3</em></p>
                 <ul>
-                  <li>Designed a web management platform handling customer measurements, orders, and delivery pipelines.</li>
-                  <li>Architected a hybrid database layer with MySQL for business data and MongoDB for custom measurements.</li>
-                  <li>Built scalable Flask application with full CRUD operations and responsive UI.</li>
+                  <li>Developing an AI-powered Flask application that automates legal contract analysis using Natural Language Processing (NLP), Retrieval-Augmented Generation (RAG), and Large Language Models (LLMs).</li>
+                  <li>Building clause-level analysis features including clause extraction, contract summarization, and risk classification to help identify high-risk terms in agreements.</li>
+                  <li>Implementing semantic search over contract text using FAISS embeddings, alongside secure PDF processing with PyMuPDF for reliable text extraction from legal documents.</li>
                 </ul>
+                <p class="resume-tech-line"><em>Tech Stack: Python, Flask, HTML, CSS, JavaScript, PyMuPDF, spaCy, FAISS, LLM API, Git</em></p>
               </div>
+
+              <!-- SmartShelf -->
               <div class="resume-entry">
                 <div class="resume-entry-header">
-                  <strong>SmartShelf | Inventory Management & Optimization System</strong>
+                  <strong>SmartShelf | Inventory Management and Optimization System</strong>
                   <span>Sep 2025 – Nov 2025</span>
                 </div>
-                <p><em>Python, Streamlit, XGBoost, Scikit-Learn, Pandas, NumPy</em></p>
                 <ul>
-                  <li>Built an inventory management dashboard tracking and optimizing stock levels using machine learning.</li>
-                  <li>Applied XGBoost regression models for sales demand forecasting and stockout prevention.</li>
+                  <li>Developed an inventory management system that tracks and optimizes stock levels using machine learning.</li>
+                  <li>Designed an interactive Streamlit dashboard to monitor inventory levels and provide real-time inventory insights.</li>
+                  <li>Implemented a demand forecasting model using the XGBoost algorithm to improve inventory stock optimization.</li>
                 </ul>
+                <p class="resume-tech-line"><em>Tech Stack: Python, Streamlit, XGBoost, Pandas, NumPy, Scikit-learn</em></p>
               </div>
             </section>
 
+            <!-- Technical Skills -->
             <section class="resume-section">
               <h3>TECHNICAL SKILLS</h3>
               <hr>
-              <p><strong>Programming Languages:</strong> Python, C++, SQL, JavaScript, HTML5, CSS3</p>
-              <p><strong>Web & Backend:</strong> Flask, Streamlit, REST APIs</p>
-              <p><strong>AI & Data Science:</strong> TensorFlow, Scikit-Learn, Pandas, NumPy, Matplotlib, spaCy, FAISS, XGBoost</p>
-              <p><strong>Databases & Tools:</strong> MySQL, MongoDB, Git, GitHub, VS Code, Power BI</p>
-              <p><strong>Core Concepts:</strong> DSA, OOP, DBMS, Operating Systems, Computer Networks</p>
+              <p><strong>Programming Languages:</strong> Python, C++, SQL</p>
+              <p><strong>Web Development:</strong> HTML, CSS, JavaScript</p>
+              <p><strong>Backend & APIs:</strong> Flask, REST APIs</p>
+              <p><strong>Databases:</strong> MySQL, MongoDB</p>
+              <p><strong>Libraries & Frameworks:</strong> Pandas, NumPy, Scikit-learn, spaCy, FAISS, XGBoost</p>
+              <p><strong>Core CS Concepts:</strong> Data Structures & Algorithms, OOP, DBMS, Operating Systems, Computer Networks</p>
+              <p><strong>Tools & Version Control:</strong> Git, GitHub, VS Code</p>
             </section>
 
+            <!-- Certifications -->
             <section class="resume-section">
-              <h3>CERTIFICATIONS & ACHIEVEMENTS</h3>
+              <h3>CERTIFICATIONS</h3>
               <hr>
               <ul>
-                <li><strong>AWS Cloud Quest: Cloud Practitioner</strong> — Amazon Web Services</li>
-                <li><strong>CSI Core Committee Member (2025–2026)</strong> — Computer Society of India (KKWIEER)</li>
-                <li><strong>Python & SQL Verified Certifications</strong> — HackerRank</li>
-                <li><strong>Buildathon Hackathon Participant</strong> — GGSCOE&RC Nashik</li>
-                <li><strong>Myntra HackerRamp 2024 Participant</strong> — National ML Hackathon</li>
+                <li>AWS Cloud Quest: Cloud Practitioner — AWS</li>
+                <li>Python — HackerRank</li>
+                <li>SQL (Basic) — HackerRank</li>
               </ul>
             </section>
+
+            <!-- Leadership & Co-Curricular Activities -->
+            <section class="resume-section">
+              <h3>LEADERSHIP & CO-CURRICULAR ACTIVITIES</h3>
+              <hr>
+              <ul>
+                <li>Core Member, Computer Society of India (CSI), KKWIEER (2025–2026)</li>
+                <li>Participant, Buildathon Hackathon, GGSCOE&RC, Nashik</li>
+                <li>Participant, Myntra HackerRamp 2024</li>
+              </ul>
+            </section>
+
           </div>
         </div>
       </div>

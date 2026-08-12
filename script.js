@@ -261,38 +261,35 @@ function initTerminalSimulator() {
    4. PROJECT MODALS & RESUME MODAL
    ========================================================================== */
 const projectDetails = {
-  contractlens: {
-    title: "ContractLens (LegalEase) — AI Legal Contract Assistant",
-    category: "AI & NLP • Flask",
-    date: "Jul 2026 – Present",
-    status: "Active Project",
-    image: "assets/images/contractlens.png",
-    overview: "ContractLens is an intelligent contract analysis platform built to protect businesses and individuals from unfavorable clauses, missing liabilities, and confusing legal terminology without compromising document privacy.",
-    architecture: [
-      "PDF Ingestion Engine: Extracts text from complex legal contracts using PyMuPDF and OCR fallbacks.",
-      "NLP Processing & Chunking: Uses spaCy to tokenize and structure clauses by section and category.",
-      "Semantic Search & FAISS: Converts clauses into vector embeddings and indexes them for high-speed similarity search against known risky clause patterns.",
-      "LLM Summarizer: Generates clear, plain-language summaries and risk scores (Low, Medium, High, Critical) with actionable advice.",
-      "Interactive Dashboard: Built with Python Flask REST backend, dynamic charts, and clean responsive UI."
-    ],
-    techStack: ["Python", "Flask", "spaCy", "FAISS", "PyMuPDF", "LLM API", "HTML5", "CSS3", "JavaScript"],
-    github: "https://github.com/Hetavi2102/ContractLens"
-  },
   tailorflow: {
-    title: "TailorFlow — Smart Tailor Management Platform",
+    title: "TailorFlow — Full-Stack Smart Tailor Management System",
     category: "Full-Stack • Hybrid DB",
     date: "Jul 2026 – Present",
     status: "Featured Project",
     image: "assets/images/tailorflow.png",
-    overview: "TailorFlow is a purpose-built business management system designed to eliminate manual bookkeeping for bespoke tailoring shops. It streamlines customer measurement tracking, fabric records, delivery milestones, and order statuses.",
+    overview: "TailorFlow is a bespoke tailor management system designed to eliminate manual bookkeeping by coordinating structured business data and dynamic order-tracking.",
     architecture: [
-      "Hybrid Database Architecture: MySQL handles structured financial, customer, and billing data with ACID guarantees, while MongoDB stores dynamic, custom garment measurement schemas.",
-      "RESTful Backend: Modular Python Flask API handling customer management, order lifecycle, invoice generation, and status updates.",
-      "Measurement Profiler: Allows flexible measurement inputs tailored to men's, women's, and specialty garments.",
-      "Delivery & Notification Engine: Tracks tailoring stages (Cutting, Stitching, Trial, Ready, Delivered) with estimated completion dates."
+      "Developing a Flask backend that handles customer management, order tracking, and measurement records through structured CRUD operations.",
+      "Integrating a hybrid database layer using MySQL for core structured business data (customers, orders) and MongoDB for dynamic order-tracking and activity logs.",
+      "Coordinating MySQL and MongoDB through a unified Flask backend to streamline tailoring operations, keeping relational business data and document-based tracking data in sync across the application."
     ],
-    techStack: ["Python", "Flask", "MySQL", "MongoDB", "JavaScript", "HTML5", "CSS3"],
+    techStack: ["Python", "Flask", "MySQL", "MongoDB", "HTML", "CSS", "JavaScript", "Git", "GitHub"],
     github: "https://github.com/Hetavi2102/TailorFlow"
+  },
+  contractlens: {
+    title: "ContractLens — Privacy-Safe AI for Detecting High-Risk Clauses",
+    category: "AI & NLP • Flask",
+    date: "Jul 2026 – Present",
+    status: "Active Project",
+    image: "assets/images/contractlens.png",
+    overview: "ContractLens is an AI-powered legal contract assistant that protects parties by automating risk analysis, summarization, and clause extraction without compromising privacy.",
+    architecture: [
+      "Developing an AI-powered Flask application that automates legal contract analysis using Natural Language Processing (NLP), Retrieval-Augmented Generation (RAG), and Large Language Models (LLMs).",
+      "Building clause-level analysis features including clause extraction, contract summarization, and risk classification to help identify high-risk terms in agreements.",
+      "Implementing semantic search over contract text using FAISS embeddings, alongside secure PDF processing with PyMuPDF for reliable text extraction from legal documents."
+    ],
+    techStack: ["Python", "Flask", "HTML", "CSS", "JavaScript", "PyMuPDF", "spaCy", "FAISS", "LLM API", "Git"],
+    github: "https://github.com/Hetavi2102/ContractLens"
   },
   smartshelf: {
     title: "SmartShelf — Inventory Management & Optimization System",
@@ -300,14 +297,13 @@ const projectDetails = {
     date: "Sep 2025 – Nov 2025",
     status: "Completed",
     image: "assets/images/smartshelf.png",
-    overview: "SmartShelf solves stockout and overstock dilemmas in retail warehouses by combining real-time inventory tracking with predictive machine learning models to forecast future product demand accurately.",
+    overview: "SmartShelf solves stockout dilemmas by combining real-time inventory tracking with predictive machine learning demand forecasting.",
     architecture: [
-      "Predictive Regressor Model: Utilizes XGBoost and Scikit-learn trained on historical sales patterns, seasonal trends, and supplier lead times to forecast demand.",
-      "Data Processing Pipeline: Cleans, normalizes, and aggregates high-frequency inventory data using Pandas and NumPy.",
-      "Interactive Streamlit Dashboard: Real-time visual dashboard showcasing inventory levels, low-stock alerts, reorder recommendations, and sales trends.",
-      "Reorder Logic: Automatic safety-stock threshold calculation based on predicted volatility."
+      "Developed an inventory management system that tracks and optimizes stock levels using machine learning.",
+      "Designed an interactive Streamlit dashboard to monitor inventory levels and provide real-time inventory insights.",
+      "Implemented a demand forecasting model using the XGBoost algorithm to improve inventory stock optimization."
     ],
-    techStack: ["Python", "Streamlit", "XGBoost", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib"],
+    techStack: ["Python", "Streamlit", "XGBoost", "Pandas", "NumPy", "Scikit-learn"],
     github: "https://github.com/Hetavi2102/SmartShelf"
   },
   billdecoder: {
@@ -316,7 +312,7 @@ const projectDetails = {
     date: "2026",
     status: "AI Project",
     image: "assets/images/billdecoder.png",
-    overview: "AI Bill Decoder simplifies complex utility, hospital, and retail bills by extracting all charges via OCR and using GenAI to explain each line item, flag hidden surcharges, and suggest money-saving tips.",
+    overview: "AI Bill Decoder simplifies complex utility and retail bills by extracting charges via OCR and using GenAI to explain each line item and flag hidden surcharges.",
     architecture: [
       "OCR Extraction Layer: Processes bill scans and photos using OpenCV pre-processing and Tesseract OCR.",
       "Entity Recognition: Identifies vendor names, invoice dates, line items, taxes, fees, and grand totals.",
