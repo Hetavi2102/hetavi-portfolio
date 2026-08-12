@@ -1,12 +1,11 @@
 /**
- * Hetavi Rampariya - Personal Developer Portfolio Interactive Scripts
- * Handles multi-section scrollspy, particle animations, terminal simulator, project modals, and resume viewer.
+ * Hetavi Rampariya - Multi-View SPA Developer Portfolio
+ * Features Client-Side Routing, Route Transitions, Terminal Simulator, Particle Canvas & Modals.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initRouter();
   initParticleCanvas();
-  initScrollSpy();
-  initRevealOnScroll();
   initTerminalSimulator();
   initModals();
   initContactForm();
@@ -17,7 +16,95 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. PARTICLE CANVAS ANIMATION
+   1. CLIENT-SIDE SPA ROUTER
+   ========================================================================== */
+function initRouter() {
+  const routes = ['home', 'about', 'education', 'skills', 'projects', 'certifications', 'activities', 'contact'];
+  const routerLinks = document.querySelectorAll('.router-link');
+  const views = document.querySelectorAll('.portfolio-view');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function getRouteFromHash() {
+    let hash = window.location.hash.replace('#/', '').replace('#', '').trim();
+    if (!hash || !routes.includes(hash)) {
+      hash = 'home';
+    }
+    return hash;
+  }
+
+  function navigateTo(routeName, updateHistory = true) {
+    if (!routes.includes(routeName)) {
+      routeName = 'home';
+    }
+
+    // 1. Hide all views & show target view with animation
+    views.forEach(view => {
+      view.classList.remove('active-view');
+    });
+
+    const targetView = document.getElementById(`view-${routeName}`);
+    if (targetView) {
+      targetView.classList.add('active-view');
+    }
+
+    // 2. Update active link in navbar
+    navLinks.forEach(link => {
+      const linkRoute = link.getAttribute('data-route');
+      if (linkRoute === routeName) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // 3. Update window hash / history
+    if (updateHistory) {
+      window.location.hash = `#/${routeName}`;
+    }
+
+    // 4. Scroll smoothly to top of view
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // 5. Close mobile menu if open
+    const navMenu = document.getElementById('nav-menu');
+    const toggleBtn = document.getElementById('mobile-toggle');
+    if (navMenu && navMenu.classList.contains('mobile-active')) {
+      navMenu.classList.remove('mobile-active');
+      if (toggleBtn) {
+        const icon = toggleBtn.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    }
+  }
+
+  // Intercept all router-link clicks
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('.router-link');
+    if (link) {
+      const route = link.getAttribute('data-route');
+      if (route) {
+        e.preventDefault();
+        navigateTo(route, true);
+      }
+    }
+  });
+
+  // Handle browser Back / Forward buttons
+  window.addEventListener('hashchange', () => {
+    const currentRoute = getRouteFromHash();
+    navigateTo(currentRoute, false);
+  });
+
+  // Initial Route Resolution on page load
+  const initialRoute = getRouteFromHash();
+  navigateTo(initialRoute, false);
+}
+
+/* ==========================================================================
+   2. PARTICLE CANVAS ANIMATION
    ========================================================================== */
 function initParticleCanvas() {
   const canvas = document.getElementById('particle-canvas');
@@ -120,7 +207,7 @@ function initParticleCanvas() {
 }
 
 /* ==========================================================================
-   2. DEVELOPER TERMINAL SIMULATOR
+   3. DEVELOPER TERMINAL SIMULATOR
    ========================================================================== */
 function initTerminalSimulator() {
   const activeCmd = document.getElementById('term-active-cmd');
@@ -171,73 +258,7 @@ function initTerminalSimulator() {
 }
 
 /* ==========================================================================
-   3. SCROLLSPY & STICKY NAVBAR
-   ========================================================================== */
-function initScrollSpy() {
-  const navbar = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-
-    let current = 'home';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 140;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
-}
-
-/* ==========================================================================
-   4. SCROLL REVEAL ANIMATIONS
-   ========================================================================== */
-function initRevealOnScroll() {
-  const reveals = document.querySelectorAll('[data-reveal]');
-
-  if (!('IntersectionObserver' in window)) {
-    reveals.forEach(el => el.classList.add('revealed'));
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.getAttribute('data-delay');
-        if (delay) {
-          setTimeout(() => {
-            entry.target.classList.add('revealed');
-          }, parseInt(delay, 10));
-        } else {
-          entry.target.classList.add('revealed');
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -30px 0px'
-  });
-
-  reveals.forEach(el => observer.observe(el));
-}
-
-/* ==========================================================================
-   5. PROJECT MODALS & RESUME MODAL
+   4. PROJECT MODALS & RESUME MODAL
    ========================================================================== */
 const projectDetails = {
   contractlens: {
@@ -412,7 +433,7 @@ function initModals() {
 }
 
 /* ==========================================================================
-   6. CONTACT FORM & TOAST
+   5. CONTACT FORM & TOAST
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -454,7 +475,7 @@ function showToast(message) {
 }
 
 /* ==========================================================================
-   7. COPY TO CLIPBOARD
+   6. COPY TO CLIPBOARD
    ========================================================================== */
 function initCopyTriggers() {
   const copyTriggers = document.querySelectorAll('.copy-trigger');
@@ -475,12 +496,11 @@ function initCopyTriggers() {
 }
 
 /* ==========================================================================
-   8. MOBILE NAVIGATION
+   7. MOBILE NAVIGATION
    ========================================================================== */
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-toggle');
   const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
 
   if (!toggleBtn || !navMenu) return;
 
@@ -495,21 +515,10 @@ function initMobileNav() {
       icon.classList.add('fa-bars');
     }
   });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('mobile-active');
-      const icon = toggleBtn.querySelector('i');
-      if (icon) {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
-    });
-  });
 }
 
 /* ==========================================================================
-   9. BACK TO TOP
+   8. BACK TO TOP
    ========================================================================== */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
@@ -532,7 +541,7 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   10. CARD MOUSE SPOTLIGHT EFFECT
+   9. CARD MOUSE SPOTLIGHT EFFECT
    ========================================================================== */
 function initCardSpotlight() {
   const cards = document.querySelectorAll('.glass-card');
