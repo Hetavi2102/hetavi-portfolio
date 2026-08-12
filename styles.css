@@ -1,18 +1,18 @@
 /* ==========================================================================
-   HETAVI RAMPARIYA — DEVELOPER PORTFOLIO DESIGN SYSTEM (FINAL POLISHED)
-   Aesthetic: Clean, Minimal, Premium, Developer-Focused
+   HETAVI RAMPARIYA — DEVELOPER PORTFOLIO
+   Design Philosophy: Clean, Calm, Modern, Professional, Developer-Focused
    Palette:
    - Deep Slate Canvas: #0B0F17
-   - Card Surface: rgba(17, 24, 39, 0.72) with 1px rgba(255, 255, 255, 0.08)
-   - Primary Accent: #8B5CF6 (Violet / Purple)
-   - Secondary Accent: #38BDF8 (Sky / Cyan)
-   - Highlights: #34D399 (Emerald), #FBBF24 (Amber)
+   - Card Surface: rgba(17, 24, 39, 0.75) with 1px rgba(255, 255, 255, 0.08)
+   - Primary Accent: #8B5CF6 (Purple)
+   - Secondary Accent: #38BDF8 (Cyan)
+   - Accents: #34D399 (Emerald Green), #FBBF24 (Amber)
    ========================================================================== */
 
 :root {
   --bg-dark: #0B0F17;
-  --bg-card: rgba(17, 24, 39, 0.72);
-  --bg-card-hover: rgba(24, 33, 53, 0.88);
+  --bg-card: rgba(17, 24, 39, 0.75);
+  --bg-card-hover: rgba(24, 33, 53, 0.9);
   --bg-card-border: rgba(255, 255, 255, 0.08);
   --bg-card-border-hover: rgba(139, 92, 246, 0.35);
 
@@ -38,7 +38,7 @@
   --radius-full: 9999px;
 
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
-  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.15);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.45);
 
   --transition-fast: 0.2s ease-out;
   --transition-normal: 0.3s ease-out;
@@ -122,46 +122,7 @@ a {
 .text-green { color: var(--accent-green); }
 
 /* ==========================================================================
-   SUBTLE BACKGROUND & AMBIENT CANVAS
-   ========================================================================== */
-#particle-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.ambient-glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.08;
-}
-
-.glow-1 {
-  top: -10%;
-  left: -5%;
-  width: 45vw;
-  height: 45vw;
-  background: var(--accent-purple);
-}
-
-.glow-2 {
-  bottom: 0;
-  right: -5%;
-  width: 40vw;
-  height: 40vw;
-  background: var(--accent-cyan);
-}
-
-/* ==========================================================================
-   GLASSMORPHISM CARDS (RESTRAINED & ELEGANT)
+   GLASSMORPHISM CARDS (CALM & ELEGANT)
    ========================================================================== */
 .glass-card {
   background: var(--bg-card);
@@ -177,7 +138,7 @@ a {
 .glass-card:hover {
   border-color: var(--bg-card-border-hover);
   box-shadow: var(--shadow-hover);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -193,7 +154,7 @@ a {
 
 .navbar {
   padding: 12px 0;
-  background: rgba(11, 15, 23, 0.88);
+  background: rgba(11, 15, 23, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--bg-card-border);
@@ -368,7 +329,7 @@ a {
 .portfolio-view {
   display: none;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(10px);
   min-height: calc(100vh - 140px);
   padding: 95px 0 50px;
 }
@@ -383,7 +344,7 @@ a {
 @keyframes viewFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -467,7 +428,6 @@ a {
   height: 6px;
   background: var(--accent-green);
   border-radius: 50%;
-  box-shadow: 0 0 6px var(--accent-green);
 }
 
 .hero-title {
@@ -1501,7 +1461,7 @@ a {
 
 /* ==========================================================================
    FOOTER
-   ========================================================================== */
+   ========================================================================= */
 .footer {
   border-top: 1px solid var(--bg-card-border);
   background: #080B10;
@@ -1836,7 +1796,6 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  #particle-canvas { display: none; }
 }
 
 /* Print Styles */

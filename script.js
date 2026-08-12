@@ -1,11 +1,10 @@
 /**
  * Hetavi Rampariya - Developer Portfolio
- * Single Page Application Router, Modals & Clean Particle Background.
+ * Features Client-Side Router, View Transitions, Modals, and Interactive Actions.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initRouter();
-  initParticleCanvas();
   initModals();
   initContactForm();
   initMobileNav();
@@ -34,7 +33,7 @@ function initRouter() {
       routeName = 'home';
     }
 
-    // 1. Hide all views & activate target view
+    // 1. Hide all views & show target view
     views.forEach(view => {
       view.classList.remove('active-view');
     });
@@ -44,7 +43,7 @@ function initRouter() {
       targetView.classList.add('active-view');
     }
 
-    // 2. Update active navbar state
+    // 2. Update active link in navbar
     navLinks.forEach(link => {
       const linkRoute = link.getAttribute('data-route');
       if (linkRoute === routeName) {
@@ -54,12 +53,12 @@ function initRouter() {
       }
     });
 
-    // 3. Update window hash / browser history
+    // 3. Update window hash & history
     if (updateHistory) {
       window.location.hash = `#/${routeName}`;
     }
 
-    // 4. Scroll smoothly to top
+    // 4. Reset scroll smoothly to top
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     // 5. Close mobile navigation menu if open
@@ -77,7 +76,7 @@ function initRouter() {
     }
   }
 
-  // Intercept all router-link clicks across navbar, hero, explore section, and footer
+  // Intercept all router-link clicks (Navbar, Hero buttons, Bottom Explore cards, Footer)
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.router-link');
     if (link) {
@@ -89,105 +88,19 @@ function initRouter() {
     }
   });
 
-  // Handle browser Back / Forward history
+  // Handle browser Back & Forward navigation
   window.addEventListener('hashchange', () => {
     const currentRoute = getRouteFromHash();
     navigateTo(currentRoute, false);
   });
 
-  // Initial Route Resolution on page load
+  // Initial Route Resolution on load
   const initialRoute = getRouteFromHash();
   navigateTo(initialRoute, false);
 }
 
 /* ==========================================================================
-   2. CALM BACKGROUND PARTICLE CANVAS
-   ========================================================================== */
-function initParticleCanvas() {
-  const canvas = document.getElementById('particle-canvas');
-  if (!canvas) return;
-
-  // Check if reduced motion is preferred
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    canvas.style.display = 'none';
-    return;
-  }
-
-  const ctx = canvas.getContext('2d');
-  let width, height;
-  let particles = [];
-
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.3;
-      this.vy = (Math.random() - 0.5) * 0.3;
-      this.radius = Math.random() * 1.4 + 0.8;
-      this.alpha = Math.random() * 0.3 + 0.1;
-      this.color = Math.random() > 0.5 ? 'rgba(139, 92, 246, ' : 'rgba(56, 189, 248, ';
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + this.alpha + ')';
-      ctx.fill();
-    }
-  }
-
-  const count = Math.min(Math.floor((width * height) / 25000), 45);
-  for (let i = 0; i < count; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        let dx = particles[i].x - particles[j].x;
-        let dy = particles[i].y - particles[j].y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 90) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(139, 92, 246, ${0.07 * (1 - dist / 90)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-}
-
-/* ==========================================================================
-   3. MODAL SYSTEMS (RESUME & PROJECT ARCHITECTURE)
+   2. MODAL SYSTEMS: ATS RESUME & PROJECT DEEP DIVE
    ========================================================================== */
 const projectDetails = {
   tailorflow: {
@@ -358,7 +271,7 @@ function initModals() {
 }
 
 /* ==========================================================================
-   4. CONTACT FORM & TOAST
+   3. CONTACT FORM & TOAST
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -400,7 +313,7 @@ function showToast(message) {
 }
 
 /* ==========================================================================
-   5. COPY TO CLIPBOARD
+   4. COPY TO CLIPBOARD
    ========================================================================== */
 function initCopyTriggers() {
   const copyTriggers = document.querySelectorAll('.copy-trigger');
@@ -421,7 +334,7 @@ function initCopyTriggers() {
 }
 
 /* ==========================================================================
-   6. MOBILE NAVIGATION
+   5. MOBILE NAVIGATION
    ========================================================================== */
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-toggle');
@@ -443,7 +356,7 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   7. BACK TO TOP
+   6. BACK TO TOP
    ========================================================================== */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
