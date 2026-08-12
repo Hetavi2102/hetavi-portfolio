@@ -1,18 +1,16 @@
 /**
- * Hetavi Rampariya - Multi-View SPA Developer Portfolio
- * Features Client-Side Routing, Route Transitions, Terminal Simulator, Particle Canvas & Modals.
+ * Hetavi Rampariya - Developer Portfolio
+ * Single Page Application Router, Modals & Clean Particle Background.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initRouter();
   initParticleCanvas();
-  initTerminalSimulator();
   initModals();
   initContactForm();
   initMobileNav();
   initBackToTop();
   initCopyTriggers();
-  initCardSpotlight();
 });
 
 /* ==========================================================================
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================================================== */
 function initRouter() {
   const routes = ['home', 'about', 'education', 'skills', 'projects', 'certifications', 'activities', 'contact'];
-  const routerLinks = document.querySelectorAll('.router-link');
   const views = document.querySelectorAll('.portfolio-view');
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -37,7 +34,7 @@ function initRouter() {
       routeName = 'home';
     }
 
-    // 1. Hide all views & show target view with animation
+    // 1. Hide all views & activate target view
     views.forEach(view => {
       view.classList.remove('active-view');
     });
@@ -47,7 +44,7 @@ function initRouter() {
       targetView.classList.add('active-view');
     }
 
-    // 2. Update active link in navbar
+    // 2. Update active navbar state
     navLinks.forEach(link => {
       const linkRoute = link.getAttribute('data-route');
       if (linkRoute === routeName) {
@@ -57,15 +54,15 @@ function initRouter() {
       }
     });
 
-    // 3. Update window hash / history
+    // 3. Update window hash / browser history
     if (updateHistory) {
       window.location.hash = `#/${routeName}`;
     }
 
-    // 4. Scroll smoothly to top of view
+    // 4. Scroll smoothly to top
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // 5. Close mobile menu if open
+    // 5. Close mobile navigation menu if open
     const navMenu = document.getElementById('nav-menu');
     const toggleBtn = document.getElementById('mobile-toggle');
     if (navMenu && navMenu.classList.contains('mobile-active')) {
@@ -80,7 +77,7 @@ function initRouter() {
     }
   }
 
-  // Intercept all router-link clicks
+  // Intercept all router-link clicks across navbar, hero, explore section, and footer
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.router-link');
     if (link) {
@@ -92,7 +89,7 @@ function initRouter() {
     }
   });
 
-  // Handle browser Back / Forward buttons
+  // Handle browser Back / Forward history
   window.addEventListener('hashchange', () => {
     const currentRoute = getRouteFromHash();
     navigateTo(currentRoute, false);
@@ -104,16 +101,21 @@ function initRouter() {
 }
 
 /* ==========================================================================
-   2. PARTICLE CANVAS ANIMATION
+   2. CALM BACKGROUND PARTICLE CANVAS
    ========================================================================== */
 function initParticleCanvas() {
   const canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
 
+  // Check if reduced motion is preferred
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    canvas.style.display = 'none';
+    return;
+  }
+
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  let mouse = { x: null, y: null, radius: 130 };
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -123,25 +125,15 @@ function initParticleCanvas() {
   window.addEventListener('resize', resize);
   resize();
 
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-  });
-
-  window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.45;
-      this.vy = (Math.random() - 0.5) * 0.45;
-      this.radius = Math.random() * 1.5 + 1;
-      this.color = Math.random() > 0.5 ? 'rgba(124, 58, 237, ' : 'rgba(56, 189, 248, ';
-      this.alpha = Math.random() * 0.4 + 0.15;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.radius = Math.random() * 1.4 + 0.8;
+      this.alpha = Math.random() * 0.3 + 0.1;
+      this.color = Math.random() > 0.5 ? 'rgba(139, 92, 246, ' : 'rgba(56, 189, 248, ';
     }
 
     update() {
@@ -150,18 +142,6 @@ function initParticleCanvas() {
 
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
-
-      // Mouse repulsion
-      if (mouse.x != null && mouse.y != null) {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < mouse.radius) {
-          let force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2;
-          this.y -= (dy / dist) * force * 2;
-        }
-      }
     }
 
     draw() {
@@ -172,7 +152,7 @@ function initParticleCanvas() {
     }
   }
 
-  const count = Math.min(Math.floor((width * height) / 15000), 70);
+  const count = Math.min(Math.floor((width * height) / 25000), 45);
   for (let i = 0; i < count; i++) {
     particles.push(new Particle());
   }
@@ -189,11 +169,11 @@ function initParticleCanvas() {
         let dy = particles[i].y - particles[j].y;
         let dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 100) {
+        if (dist < 90) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(124, 58, 237, ${0.1 * (1 - dist / 100)})`;
+          ctx.strokeStyle = `rgba(139, 92, 246, ${0.07 * (1 - dist / 90)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -207,58 +187,7 @@ function initParticleCanvas() {
 }
 
 /* ==========================================================================
-   3. DEVELOPER TERMINAL SIMULATOR
-   ========================================================================== */
-function initTerminalSimulator() {
-  const activeCmd = document.getElementById('term-active-cmd');
-  const activeRes = document.getElementById('term-active-res');
-  const copyBtn = document.getElementById('terminal-copy-action');
-  const termConsole = document.getElementById('terminal-console');
-  const cmdChips = document.querySelectorAll('.cmd-chip');
-
-  const commandMap = {
-    whoami: {
-      cmd: 'whoami',
-      res: 'Hetavi Rampariya — B.Tech in AI & Data Science (KKWIEER Nashik • 8.17 CGPA)'
-    },
-    stack: {
-      cmd: 'cat stack.txt',
-      res: 'Python, C++, SQL, JavaScript, Flask, Streamlit, TensorFlow, Scikit-Learn, Pandas, MySQL, MongoDB'
-    },
-    projects: {
-      cmd: 'ls -l ./projects',
-      res: '• ContractLens (AI Legal Analyzer)\n• TailorFlow (Smart Tailor Platform)\n• SmartShelf (ML Inventory Forecaster)\n• AI Bill Decoder (OCR Cost Explainer)'
-    },
-    clear: {
-      cmd: 'clear',
-      res: 'Terminal reset. Click shortcut chips to query developer profile.'
-    }
-  };
-
-  cmdChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const key = chip.getAttribute('data-cmd');
-      const data = commandMap[key];
-      if (data && activeCmd && activeRes) {
-        activeCmd.textContent = data.cmd;
-        activeRes.textContent = data.res;
-      }
-    });
-  });
-
-  if (copyBtn && termConsole) {
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText(termConsole.innerText).then(() => {
-        showToast('Terminal output copied to clipboard!');
-      }).catch(() => {
-        showToast('Copied terminal output.');
-      });
-    });
-  }
-}
-
-/* ==========================================================================
-   4. PROJECT MODALS & RESUME MODAL
+   3. MODAL SYSTEMS (RESUME & PROJECT ARCHITECTURE)
    ========================================================================== */
 const projectDetails = {
   tailorflow: {
@@ -366,27 +295,27 @@ function initModals() {
     const data = projectDetails[key];
     if (!data || !projectModal) return;
 
-    modalTitle.innerHTML = `<i class="fa-solid fa-layer-group text-purple"></i> ${data.title}`;
+    modalTitle.innerHTML = `<i class="fa-solid fa-cubes text-purple"></i> ${data.title}`;
     
     modalBody.innerHTML = `
-      <div style="display:flex; flex-direction:column; gap:16px;">
-        <div style="width:100%; height:200px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="width:100%; height:190px; border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);">
           <img src="${data.image}" alt="${data.title}" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div>
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.80rem; color:var(--text-dim); font-weight:600;">${data.date}</span>
+            <span style="font-size:0.78rem; color:var(--text-dim); font-weight:600;">${data.date}</span>
             <span class="project-status active">${data.status}</span>
           </div>
-          <p style="font-size:0.90rem; color:var(--text-muted); line-height:1.6; margin-bottom:14px;">${data.overview}</p>
+          <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.55; margin-bottom:12px;">${data.overview}</p>
           
-          <h4 style="font-size:0.95rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-network-wired text-purple"></i> Architecture Highlights:</h4>
-          <ul style="margin-left:18px; font-size:0.84rem; color:var(--text-muted); line-height:1.55; margin-bottom:16px;">
-            ${data.architecture.map(a => `<li style="margin-bottom:5px;">${a}</li>`).join('')}
+          <h4 style="font-size:0.9rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-layer-group text-purple"></i> Key Architecture:</h4>
+          <ul style="margin-left:16px; font-size:0.82rem; color:var(--text-muted); line-height:1.5; margin-bottom:14px;">
+            ${data.architecture.map(a => `<li style="margin-bottom:4px;">${a}</li>`).join('')}
           </ul>
 
-          <h4 style="font-size:0.90rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-code text-cyan"></i> Tech Stack:</h4>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px;">
+          <h4 style="font-size:0.86rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-code text-cyan"></i> Tech Stack:</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px;">
             ${data.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
           </div>
 
@@ -429,7 +358,7 @@ function initModals() {
 }
 
 /* ==========================================================================
-   5. CONTACT FORM & TOAST
+   4. CONTACT FORM & TOAST
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -440,16 +369,16 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> <span>Sending...</span>`;
+    const originalContent = submitBtn.innerHTML;
+    submitBtn.innerHTML = `<span>Sending...</span>`;
     submitBtn.disabled = true;
 
     setTimeout(() => {
-      showToast("Thank you! Your message has been sent successfully. I'll get back to you shortly.");
+      showToast("Thank you! Your message has been sent successfully.");
       form.reset();
-      submitBtn.innerHTML = originalText;
+      submitBtn.innerHTML = originalContent;
       submitBtn.disabled = false;
-    }, 900);
+    }, 700);
   });
 }
 
@@ -464,14 +393,14 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateY(12px)';
-    toast.style.transition = 'all 0.3s ease';
-    setTimeout(() => toast.remove(), 300);
-  }, 3500);
+    toast.style.transform = 'translateY(8px)';
+    toast.style.transition = 'all 0.25s ease';
+    setTimeout(() => toast.remove(), 250);
+  }, 3200);
 }
 
 /* ==========================================================================
-   6. COPY TO CLIPBOARD
+   5. COPY TO CLIPBOARD
    ========================================================================== */
 function initCopyTriggers() {
   const copyTriggers = document.querySelectorAll('.copy-trigger');
@@ -492,7 +421,7 @@ function initCopyTriggers() {
 }
 
 /* ==========================================================================
-   7. MOBILE NAVIGATION
+   6. MOBILE NAVIGATION
    ========================================================================== */
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-toggle');
@@ -514,14 +443,14 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   8. BACK TO TOP
+   7. BACK TO TOP
    ========================================================================== */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 350) {
+    if (window.scrollY > 300) {
       btn.classList.add('visible');
     } else {
       btn.classList.remove('visible');
@@ -532,23 +461,6 @@ function initBackToTop() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    });
-  });
-}
-
-/* ==========================================================================
-   9. CARD MOUSE SPOTLIGHT EFFECT
-   ========================================================================== */
-function initCardSpotlight() {
-  const cards = document.querySelectorAll('.glass-card');
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
     });
   });
 }
