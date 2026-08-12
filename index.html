@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hetavi Rampariya | AI & Data Science Student & Aspiring Software Developer</title>
-  <meta name="description" content="Developer profile & portfolio of Hetavi Rampariya — AI & Data Science Engineering Student & Aspiring Software Developer specializing in Python, Flask, ML, and Backend Development.">
+  <meta name="description" content="Personal developer dashboard of Hetavi Rampariya — AI & Data Science Engineering Student & Aspiring Software Developer building clean applications and AI solutions.">
   <meta name="keywords" content="Hetavi Rampariya, AI & Data Science, Aspiring Software Developer, Python, Flask, Machine Learning, Developer Profile">
   <meta name="author" content="Hetavi Rampariya">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Hetavi Rampariya | Developer Profile">
-  <meta property="og:description" content="AI & Data Science Engineering Student • Aspiring Software Developer • Python, Flask, Machine Learning">
+  <meta property="og:description" content="AI & Data Science Engineering Student • Aspiring Software Developer • Python, Flask, ML">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts: Inter, Space Grotesk, Fira Code -->
@@ -43,11 +43,11 @@
       </a>
 
       <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="#overview" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="#skills" class="nav-link">Tech Stack</a></li>
-        <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="#overview" class="nav-link active">Profile</a></li>
+        <li class="nav-item"><a href="#projects-panel" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#stack-panel" class="nav-link">Tech Stack</a></li>
+        <li class="nav-item"><a href="#achievements-panel" class="nav-link">Achievements</a></li>
+        <li class="nav-item"><a href="#contact-panel" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -67,529 +67,464 @@
     </div>
   </nav>
 
-  <!-- Main Developer Dashboard Layout -->
-  <main class="dashboard-main" id="overview">
-    <div class="dashboard-container">
+  <!-- =================================================================
+       SINGLE UNIFIED DEVELOPER DASHBOARD GRID
+       ================================================================= -->
+  <main class="dashboard-canvas" id="overview">
+    <div class="dashboard-grid">
 
       <!-- =================================================================
-           ROW 1: HERO PROFILE CARD (LEFT) + DEVELOPER TERMINAL (RIGHT)
+           BLOCK 1: PROFILE CARD (Top Left - 7 cols)
            ================================================================= -->
-      <section class="dash-row hero-row" data-reveal="fade-up">
-        
-        <!-- Left: Hero Profile Card -->
-        <div class="hero-profile-card glass-card">
-          <div class="status-badge">
-            <span class="pulse-dot"></span>
-            <span>AVAILABLE FOR SOFTWARE & AI ROLES</span>
-          </div>
+      <div class="grid-card profile-card glass-card" data-reveal="fade-up">
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>AVAILABLE FOR ROLES</span>
+        </div>
 
-          <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Hetavi Rampariya</span>
-          </h1>
+        <h1 class="profile-title">
+          Hi, I'm <span class="gradient-text">Hetavi Rampariya</span>
+        </h1>
 
-          <div class="hero-subtitle-container">
-            <span class="hero-subtitle" id="typed-subtitle">AI & Data Science Engineering Student</span>
-            <span class="cursor-blink">|</span>
-          </div>
+        <div class="role-tags-container">
+          <span class="role-tag purple"><i class="fa-solid fa-graduation-cap"></i> AI & Data Science Engineering Student</span>
+          <span class="role-tag cyan"><i class="fa-solid fa-laptop-code"></i> Aspiring Software Developer</span>
+        </div>
 
-          <p class="hero-description">
-            I build clean, user-focused applications and AI-powered solutions while exploring software engineering, backend development, and machine learning.
-          </p>
+        <p class="profile-bio">
+          I build clean, user-focused applications and AI-powered solutions while exploring software engineering, backend development, and machine learning.
+        </p>
 
-          <div class="hero-pills">
-            <div class="pill-item"><i class="fa-solid fa-graduation-cap text-purple"></i> B.Tech AI & DS (8.17 CGPA)</div>
-            <div class="pill-item"><i class="fa-solid fa-laptop-code text-cyan"></i> Aspiring Software Developer</div>
-            <div class="pill-item"><i class="fa-solid fa-location-dot text-muted"></i> KKWIEER, Nashik</div>
-          </div>
-
-          <div class="hero-cta-group">
-            <a href="#projects" class="btn btn-primary">
-              <span>View Projects</span> <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <button class="btn btn-glass" id="hero-resume-btn">
-              <i class="fa-solid fa-file-arrow-down"></i> <span>Download Resume</span>
-            </button>
-          </div>
-
-          <div class="hero-socials">
-            <span class="social-label">Connect:</span>
-            <a href="https://github.com/Hetavi2102" target="_blank" rel="noopener" class="social-link" title="GitHub">
+        <div class="profile-cta-cluster">
+          <a href="#projects-panel" class="btn btn-primary btn-sm">
+            <span>View Projects</span> <i class="fa-solid fa-arrow-down"></i>
+          </a>
+          <button class="btn btn-glass btn-sm" id="hero-resume-btn">
+            <i class="fa-solid fa-file-arrow-down"></i> <span>Download Resume</span>
+          </button>
+          
+          <div class="profile-social-icons">
+            <a href="https://github.com/Hetavi2102" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub: Hetavi2102">
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/hetavi-rampariya" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+            <a href="https://linkedin.com/in/hetavi-rampariya" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn: hetavi-rampariya">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <button class="social-link copy-trigger" data-copy="rampariyahetavi@gmail.com" title="Copy Email">
+            <button class="social-icon-btn copy-trigger" data-copy="rampariyahetavi@gmail.com" title="Copy Email">
               <i class="fa-solid fa-envelope"></i>
             </button>
           </div>
         </div>
-
-        <!-- Right: Developer Terminal / Code Console -->
-        <div class="hero-terminal-card glass-card">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <span class="terminal-filename"><i class="fa-solid fa-terminal text-purple"></i> hetavi@workspace:~</span>
-            <button class="terminal-copy-action" id="terminal-copy-action" title="Copy terminal output">
-              <i class="fa-regular fa-copy"></i>
-            </button>
-          </div>
-
-          <div class="terminal-content" id="terminal-console">
-            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></div>
-            <div class="t-res highlight">Hetavi Rampariya</div>
-
-            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">education</span></div>
-            <div class="t-res">B.Tech in Artificial Intelligence & Data Science <span class="t-badge">8.17 CGPA</span></div>
-
-            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">focus</span></div>
-            <div class="t-res text-cyan">Software Development + AI / ML</div>
-
-            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">currently_building</span></div>
-            <div class="t-res text-purple">TailorFlow <span class="t-dim">(Smart Tailor Management Platform)</span></div>
-
-            <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">interests</span></div>
-            <div class="t-res t-stack">
-              <span>• Backend Architecture (Python, Flask, SQL)</span>
-              <span>• Machine Learning & Applied NLP (FAISS, spaCy)</span>
-              <span>• Full-Stack Web Development</span>
-            </div>
-
-            <div class="t-line active-line">
-              <span class="t-prompt">$</span> <span class="t-cmd" id="term-active-cmd">status --ready</span>
-              <span class="cursor-blink">_</span>
-            </div>
-            <div class="t-res t-status-box" id="term-active-res">
-              Ready for software engineering internships & AI developer roles.
-            </div>
-          </div>
-
-          <div class="terminal-footer">
-            <span class="quick-cmd-label">Run:</span>
-            <button class="term-btn" data-cmd="whoami">$ whoami</button>
-            <button class="term-btn" data-cmd="stack">$ stack</button>
-            <button class="term-btn" data-cmd="projects">$ projects</button>
-            <button class="term-btn" data-cmd="clear">$ clear</button>
-          </div>
-        </div>
-
-      </section>
+      </div>
 
       <!-- =================================================================
-           ROW 2: QUICK INFORMATION WIDGET CARDS
+           BLOCK 2: DEVELOPER TERMINAL CONSOLE (Top Right - 5 cols)
            ================================================================= -->
-      <section class="dash-row widgets-row" data-reveal="fade-up">
-        <div class="widget-card glass-card">
-          <div class="widget-icon purple">
-            <i class="fa-solid fa-graduation-cap"></i>
+      <div class="grid-card terminal-card glass-card" data-reveal="fade-up" data-delay="100">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
           </div>
-          <div class="widget-meta">
-            <span class="widget-label">Education</span>
-            <h3 class="widget-title">B.Tech AI & DS</h3>
-            <span class="widget-desc">CGPA: 8.17 • KKWIEER</span>
+          <span class="terminal-tab-title"><i class="fa-solid fa-terminal text-purple"></i> hetavi@workspace:~</span>
+          <button class="term-copy-action" id="terminal-copy-action" title="Copy terminal output">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+
+        <div class="terminal-body" id="terminal-console">
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></div>
+          <div class="t-res highlight">Hetavi Rampariya</div>
+
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">education</span></div>
+          <div class="t-res">B.Tech AI & Data Science <span class="t-pill">8.17 CGPA</span></div>
+
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">focus</span></div>
+          <div class="t-res text-cyan">Software Development + AI / ML</div>
+
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">currently_building</span></div>
+          <div class="t-res text-purple">TailorFlow <span class="t-sub">(Smart Tailor Management)</span></div>
+
+          <div class="t-line active-line">
+            <span class="t-prompt">$</span> <span class="t-cmd" id="term-active-cmd">status --roles</span>
+            <span class="cursor-blink">_</span>
+          </div>
+          <div class="t-res t-status" id="term-active-res">
+            Ready for software engineering internships & AI developer roles.
           </div>
         </div>
 
-        <div class="widget-card glass-card">
-          <div class="widget-icon cyan">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
-          <div class="widget-meta">
-            <span class="widget-label">Current Focus</span>
-            <h3 class="widget-title">Software + AI</h3>
-            <span class="widget-desc">Clean Code & Intelligent APIs</span>
-          </div>
+        <div class="terminal-quick-cmds">
+          <span class="quick-label">Run:</span>
+          <button class="cmd-chip" data-cmd="whoami">$ whoami</button>
+          <button class="cmd-chip" data-cmd="stack">$ stack</button>
+          <button class="cmd-chip" data-cmd="projects">$ projects</button>
+          <button class="cmd-chip" data-cmd="clear">$ clear</button>
         </div>
-
-        <div class="widget-card glass-card">
-          <div class="widget-icon purple">
-            <i class="fa-solid fa-code-branch"></i>
-          </div>
-          <div class="widget-meta">
-            <span class="widget-label">Currently Building</span>
-            <h3 class="widget-title">TailorFlow</h3>
-            <span class="widget-desc">Flask + MySQL + MongoDB</span>
-          </div>
-        </div>
-
-        <div class="widget-card glass-card">
-          <div class="widget-icon cyan">
-            <i class="fa-solid fa-compass"></i>
-          </div>
-          <div class="widget-meta">
-            <span class="widget-label">Core Interests</span>
-            <h3 class="widget-title">Backend • AI/ML</h3>
-            <span class="widget-desc">REST APIs • NLP • Web Dev</span>
-          </div>
-        </div>
-      </section>
+      </div>
 
       <!-- =================================================================
-           ROW 3: FEATURED PROJECTS DASHBOARD (HIGH PRIORITY)
+           BLOCK 3: QUICK INFO WIDGET 1 (Education / Background - 4 cols)
            ================================================================= -->
-      <section class="dash-section" id="projects">
-        <div class="section-header-compact" data-reveal="fade-up">
+      <div class="grid-card bento-widget glass-card" data-reveal="fade-up">
+        <div class="widget-header">
+          <div class="widget-icon purple"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="widget-badge">Education</span>
+        </div>
+        <h3 class="widget-heading">B.Tech AI & DS</h3>
+        <p class="widget-sub">K. K. Wagh Institute (KKWIEER), Nashik</p>
+        <div class="widget-stat-pill"><i class="fa-solid fa-star text-yellow"></i> 8.17 CGPA (2023 – Present)</div>
+      </div>
+
+      <!-- =================================================================
+           BLOCK 4: QUICK INFO WIDGET 2 (Focus & Building - 4 cols)
+           ================================================================= -->
+      <div class="grid-card bento-widget glass-card" data-reveal="fade-up" data-delay="100">
+        <div class="widget-header">
+          <div class="widget-icon cyan"><i class="fa-solid fa-bolt"></i></div>
+          <span class="widget-badge">Active Build</span>
+        </div>
+        <h3 class="widget-heading">TailorFlow</h3>
+        <p class="widget-sub">Full-Stack Tailor Platform (Flask + MySQL + Mongo)</p>
+        <div class="widget-stat-pill text-cyan"><i class="fa-solid fa-code-branch"></i> In Active Development</div>
+      </div>
+
+      <!-- =================================================================
+           BLOCK 5: QUICK INFO WIDGET 3 (Core Interests - 4 cols)
+           ================================================================= -->
+      <div class="grid-card bento-widget glass-card" data-reveal="fade-up" data-delay="200">
+        <div class="widget-header">
+          <div class="widget-icon purple"><i class="fa-solid fa-compass"></i></div>
+          <span class="widget-badge">Core Focus</span>
+        </div>
+        <h3 class="widget-heading">Backend • AI/ML</h3>
+        <p class="widget-sub">RESTful APIs, NLP & Intelligent Web Systems</p>
+        <div class="widget-stat-pill"><i class="fa-solid fa-layer-group text-purple"></i> Full-Stack Integration</div>
+      </div>
+
+      <!-- =================================================================
+           BLOCK 6: FEATURED PROJECTS DASHBOARD (Full Width - 12 cols)
+           ================================================================= -->
+      <div class="grid-card projects-panel glass-card" id="projects-panel" data-reveal="fade-up">
+        <div class="panel-header-row">
           <div>
-            <span class="section-subtitle">Engineering Portfolio</span>
-            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+            <span class="panel-subtitle">Core Applications</span>
+            <h2 class="panel-title">Featured <span class="gradient-text">Projects</span></h2>
           </div>
-          <span class="section-count-badge"><i class="fa-solid fa-layer-group text-purple"></i> 4 Core Applications</span>
+          <span class="panel-count-pill"><i class="fa-solid fa-cubes text-cyan"></i> 4 Projects</span>
         </div>
 
-        <div class="projects-grid-dashboard">
+        <div class="bento-projects-grid">
 
           <!-- Project 1: ContractLens -->
-          <div class="project-card glass-card" data-reveal="fade-up">
-            <div class="project-image-container">
-              <img src="assets/images/contractlens.png" alt="ContractLens AI Legal Contract Analyzer" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <span class="project-category">AI & NLP • Flask</span>
-                <button class="btn btn-sm btn-primary project-modal-btn" data-project="contractlens">
-                  <i class="fa-solid fa-expand"></i> Deep Dive
-                </button>
-              </div>
+          <div class="bento-project-item">
+            <div class="project-thumb">
+              <img src="assets/images/contractlens.png" alt="ContractLens AI Legal Contract Analyzer" loading="lazy">
+              <span class="thumb-badge">AI & NLP</span>
             </div>
-            <div class="project-content">
-              <div class="project-header-meta">
-                <span class="project-date">Jul 2026 – Present</span>
-                <span class="status-tag active">Active Project</span>
+            <div class="project-info">
+              <div class="p-title-row">
+                <h3 class="p-title">ContractLens (LegalEase)</h3>
+                <span class="p-status active">Active</span>
               </div>
-              <h3 class="project-title">ContractLens (LegalEase)</h3>
-              <p class="project-description">
-                Privacy-safe AI legal contract analyzer automating high-risk clause detection, indemnity analysis, and document summarization with FAISS & NLP.
+              <p class="p-desc">
+                Privacy-safe AI legal contract analyzer detecting high-risk clauses, indemnities, and summarizing complex agreements using FAISS vector search & NLP.
               </p>
-              <div class="project-tags">
+              <div class="p-tags">
                 <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
                 <span class="tag"><i class="devicon-flask-original"></i> Flask</span>
                 <span class="tag">NLP</span>
                 <span class="tag">FAISS</span>
                 <span class="tag">LLM API</span>
-                <span class="tag">spaCy</span>
-                <span class="tag">PyMuPDF</span>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/Hetavi2102/ContractLens" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="View ContractLens Repository">
-                  <i class="fa-brands fa-github"></i> GitHub
+              <div class="p-actions">
+                <a href="https://github.com/Hetavi2102/ContractLens" target="_blank" rel="noopener" class="btn btn-outline btn-xs">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
-                <button class="btn btn-glass btn-sm project-modal-btn" data-project="contractlens">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Architecture
+                <button class="btn btn-glass btn-xs project-modal-btn" data-project="contractlens">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Deep Dive</span>
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 2: TailorFlow -->
-          <div class="project-card glass-card" data-reveal="fade-up" data-delay="100">
-            <div class="project-image-container">
-              <img src="assets/images/tailorflow.png" alt="TailorFlow Smart Tailor Management Platform" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <span class="project-category">Full-Stack • Hybrid DB</span>
-                <button class="btn btn-sm btn-primary project-modal-btn" data-project="tailorflow">
-                  <i class="fa-solid fa-expand"></i> Deep Dive
-                </button>
-              </div>
+          <div class="bento-project-item">
+            <div class="project-thumb">
+              <img src="assets/images/tailorflow.png" alt="TailorFlow Smart Tailor Management Platform" loading="lazy">
+              <span class="thumb-badge">Full-Stack</span>
             </div>
-            <div class="project-content">
-              <div class="project-header-meta">
-                <span class="project-date">Jul 2026 – Present</span>
-                <span class="status-tag active">Featured Project</span>
+            <div class="project-info">
+              <div class="p-title-row">
+                <h3 class="p-title">TailorFlow</h3>
+                <span class="p-status active">Featured</span>
               </div>
-              <h3 class="project-title">TailorFlow</h3>
-              <p class="project-description">
-                Full-stack smart tailor management system handling customer records, bespoke measurements, orders, and delivery pipelines with hybrid MySQL & Mongo.
+              <p class="p-desc">
+                Full-stack business platform handling bespoke customer records, flexible measurement schemas, orders, and delivery pipelines with hybrid MySQL & MongoDB.
               </p>
-              <div class="project-tags">
+              <div class="p-tags">
                 <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
                 <span class="tag"><i class="devicon-flask-original"></i> Flask</span>
                 <span class="tag"><i class="devicon-mysql-plain colored"></i> MySQL</span>
                 <span class="tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
-                <span class="tag"><i class="devicon-javascript-plain colored"></i> JS/CSS</span>
+                <span class="tag">JS</span>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/Hetavi2102/TailorFlow" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="View TailorFlow Repository">
-                  <i class="fa-brands fa-github"></i> GitHub
+              <div class="p-actions">
+                <a href="https://github.com/Hetavi2102/TailorFlow" target="_blank" rel="noopener" class="btn btn-outline btn-xs">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
-                <button class="btn btn-glass btn-sm project-modal-btn" data-project="tailorflow">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Architecture
+                <button class="btn btn-glass btn-xs project-modal-btn" data-project="tailorflow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Deep Dive</span>
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 3: SmartShelf -->
-          <div class="project-card glass-card" data-reveal="fade-up" data-delay="200">
-            <div class="project-image-container">
-              <img src="assets/images/smartshelf.png" alt="SmartShelf Inventory Management & Forecasting" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <span class="project-category">Machine Learning • Analytics</span>
-                <button class="btn btn-sm btn-primary project-modal-btn" data-project="smartshelf">
-                  <i class="fa-solid fa-expand"></i> Deep Dive
-                </button>
-              </div>
+          <div class="bento-project-item">
+            <div class="project-thumb">
+              <img src="assets/images/smartshelf.png" alt="SmartShelf Inventory Management & Forecasting" loading="lazy">
+              <span class="thumb-badge">ML & Analytics</span>
             </div>
-            <div class="project-content">
-              <div class="project-header-meta">
-                <span class="project-date">Sep 2025 – Nov 2025</span>
-                <span class="status-tag completed">Completed</span>
+            <div class="project-info">
+              <div class="p-title-row">
+                <h3 class="p-title">SmartShelf</h3>
+                <span class="p-status done">Completed</span>
               </div>
-              <h3 class="project-title">SmartShelf</h3>
-              <p class="project-description">
-                ML-powered inventory management and demand forecasting dashboard tracking warehouse stock levels and predicting reorders using XGBoost regressor models.
+              <p class="p-desc">
+                ML-powered inventory management dashboard tracking stock levels and predicting reorder velocity using XGBoost regressor models.
               </p>
-              <div class="project-tags">
+              <div class="p-tags">
                 <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
                 <span class="tag">Streamlit</span>
                 <span class="tag">XGBoost</span>
                 <span class="tag">Pandas</span>
                 <span class="tag">NumPy</span>
-                <span class="tag">Scikit-Learn</span>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/Hetavi2102/SmartShelf" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="View SmartShelf Repository">
-                  <i class="fa-brands fa-github"></i> GitHub
+              <div class="p-actions">
+                <a href="https://github.com/Hetavi2102/SmartShelf" target="_blank" rel="noopener" class="btn btn-outline btn-xs">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
-                <button class="btn btn-glass btn-sm project-modal-btn" data-project="smartshelf">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Architecture
+                <button class="btn btn-glass btn-xs project-modal-btn" data-project="smartshelf">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Deep Dive</span>
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Project 4: AI Bill Decoder -->
-          <div class="project-card glass-card" data-reveal="fade-up" data-delay="300">
-            <div class="project-image-container">
-              <img src="assets/images/billdecoder.png" alt="AI Bill Decoder OCR App" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <span class="project-category">AI OCR • Computer Vision</span>
-                <button class="btn btn-sm btn-primary project-modal-btn" data-project="billdecoder">
-                  <i class="fa-solid fa-expand"></i> Deep Dive
-                </button>
-              </div>
+          <div class="bento-project-item">
+            <div class="project-thumb">
+              <img src="assets/images/billdecoder.png" alt="AI Bill Decoder OCR App" loading="lazy">
+              <span class="thumb-badge">AI OCR</span>
             </div>
-            <div class="project-content">
-              <div class="project-header-meta">
-                <span class="project-date">2026</span>
-                <span class="status-tag active">AI Project</span>
+            <div class="project-info">
+              <div class="p-title-row">
+                <h3 class="p-title">AI Bill Decoder</h3>
+                <span class="p-status active">Active</span>
               </div>
-              <h3 class="project-title">AI Bill Decoder</h3>
-              <p class="project-description">
-                Automated invoice and utility bill OCR tool that extracts line-item charges and provides plain-language AI cost explanations to identify hidden fees.
+              <p class="p-desc">
+                Automated invoice and utility bill OCR tool that extracts charges and provides clear, plain-language AI cost explanations to identify hidden fees.
               </p>
-              <div class="project-tags">
+              <div class="p-tags">
                 <span class="tag"><i class="devicon-python-plain colored"></i> Python</span>
                 <span class="tag"><i class="devicon-flask-original"></i> Flask</span>
                 <span class="tag">OpenCV/OCR</span>
                 <span class="tag">LLM API</span>
-                <span class="tag">JavaScript</span>
+                <span class="tag">JS</span>
               </div>
-              <div class="project-actions">
-                <a href="https://github.com/Hetavi2102/AI-Bill-Decoder" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="View AI Bill Decoder Repository">
-                  <i class="fa-brands fa-github"></i> GitHub
+              <div class="p-actions">
+                <a href="https://github.com/Hetavi2102/AI-Bill-Decoder" target="_blank" rel="noopener" class="btn btn-outline btn-xs">
+                  <i class="fa-brands fa-github"></i> <span>GitHub</span>
                 </a>
-                <button class="btn btn-glass btn-sm project-modal-btn" data-project="billdecoder">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Architecture
+                <button class="btn btn-glass btn-xs project-modal-btn" data-project="billdecoder">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Deep Dive</span>
                 </button>
               </div>
             </div>
           </div>
 
         </div>
-      </section>
+      </div>
 
       <!-- =================================================================
-           ROW 4: TECH STACK (LEFT) + ACHIEVEMENTS & ABOUT (RIGHT)
+           BLOCK 7: TECHNICAL STACK PANEL (Left - 7 cols)
            ================================================================= -->
-      <section class="dash-row split-stack-achievements" id="skills">
-        
-        <!-- Left: Technical Stack Dashboard Card -->
-        <div class="tech-stack-card glass-card" data-reveal="fade-right">
-          <div class="card-inner-header">
-            <span class="section-subtitle">Core Tooling</span>
-            <h3 class="card-headline">Technical <span class="gradient-text">Stack</span></h3>
-          </div>
-
-          <div class="tech-categories-grid">
-            
-            <!-- Category: Languages -->
-            <div class="tech-category-group">
-              <span class="cat-title"><i class="fa-solid fa-code text-purple"></i> Languages</span>
-              <div class="skill-chips-row">
-                <span class="skill-chip"><i class="devicon-python-plain colored"></i> Python</span>
-                <span class="skill-chip"><i class="devicon-cplusplus-plain colored"></i> C++</span>
-                <span class="skill-chip"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-                <span class="skill-chip"><i class="devicon-html5-plain colored"></i> HTML5</span>
-                <span class="skill-chip"><i class="devicon-css3-plain colored"></i> CSS3</span>
-                <span class="skill-chip"><i class="fa-solid fa-database text-cyan"></i> SQL</span>
-              </div>
-            </div>
-
-            <!-- Category: Frameworks & Backend -->
-            <div class="tech-category-group">
-              <span class="cat-title"><i class="fa-solid fa-server text-cyan"></i> Backend & Frameworks</span>
-              <div class="skill-chips-row">
-                <span class="skill-chip"><i class="devicon-flask-original"></i> Flask</span>
-                <span class="skill-chip"><i class="fa-solid fa-chart-simple text-purple"></i> Streamlit</span>
-                <span class="skill-chip"><i class="fa-solid fa-network-wired text-cyan"></i> REST APIs</span>
-              </div>
-            </div>
-
-            <!-- Category: AI & Data Science -->
-            <div class="tech-category-group">
-              <span class="cat-title"><i class="fa-solid fa-brain text-purple"></i> AI & Data Science</span>
-              <div class="skill-chips-row">
-                <span class="skill-chip"><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
-                <span class="skill-chip"><i class="devicon-scikitlearn-plain colored"></i> Scikit-Learn</span>
-                <span class="skill-chip"><i class="devicon-pandas-original colored"></i> Pandas</span>
-                <span class="skill-chip"><i class="devicon-numpy-original colored"></i> NumPy</span>
-                <span class="skill-chip"><i class="fa-solid fa-chart-line text-cyan"></i> Matplotlib</span>
-                <span class="skill-chip"><i class="fa-solid fa-cubes text-purple"></i> FAISS & spaCy</span>
-              </div>
-            </div>
-
-            <!-- Category: Databases & Tools -->
-            <div class="tech-category-group">
-              <span class="cat-title"><i class="fa-solid fa-toolbox text-cyan"></i> Databases & Tools</span>
-              <div class="skill-chips-row">
-                <span class="skill-chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
-                <span class="skill-chip"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
-                <span class="skill-chip"><i class="devicon-git-plain colored"></i> Git</span>
-                <span class="skill-chip"><i class="devicon-github-original"></i> GitHub</span>
-                <span class="skill-chip"><i class="devicon-vscode-plain colored"></i> VS Code</span>
-                <span class="skill-chip"><i class="fa-solid fa-chart-pie text-purple"></i> Power BI</span>
-                <span class="skill-chip"><i class="fa-solid fa-diagram-project text-cyan"></i> DSA & OOP</span>
-              </div>
-            </div>
-
+      <div class="grid-card stack-panel glass-card" id="stack-panel" data-reveal="fade-right">
+        <div class="panel-header-row">
+          <div>
+            <span class="panel-subtitle">Tooling & Competencies</span>
+            <h2 class="panel-title">Technical <span class="gradient-text">Stack</span></h2>
           </div>
         </div>
 
-        <!-- Right: Achievements & Compact Bio Card -->
-        <div class="achievements-bio-card glass-card" id="achievements" data-reveal="fade-left">
-          <div class="card-inner-header">
-            <span class="section-subtitle">Milestones & Bio</span>
-            <h3 class="card-headline">Achievements & <span class="gradient-text">Profile</span></h3>
+        <div class="stack-categories-bento">
+          
+          <!-- Languages -->
+          <div class="stack-cluster">
+            <span class="cluster-label"><i class="fa-solid fa-code text-purple"></i> Languages</span>
+            <div class="chips-flex">
+              <span class="chip"><i class="devicon-python-plain colored"></i> Python</span>
+              <span class="chip"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+              <span class="chip"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+              <span class="chip"><i class="devicon-html5-plain colored"></i> HTML5</span>
+              <span class="chip"><i class="devicon-css3-plain colored"></i> CSS3</span>
+              <span class="chip"><i class="fa-solid fa-database text-cyan"></i> SQL</span>
+            </div>
           </div>
 
-          <!-- Compact Bio Summary -->
-          <div class="compact-bio-box">
-            <p class="bio-text">
-              Final-year B.Tech AI & Data Science student at <strong>KKWIEER, Nashik (8.17 CGPA)</strong>. Focused on building practical software applications combining backend design, databases, and AI solutions with strong fundamentals in DSA, DBMS, and Object-Oriented Programming.
-            </p>
+          <!-- Frameworks & Backend -->
+          <div class="stack-cluster">
+            <span class="cluster-label"><i class="fa-solid fa-server text-cyan"></i> Backend & Frameworks</span>
+            <div class="chips-flex">
+              <span class="chip"><i class="devicon-flask-original"></i> Flask</span>
+              <span class="chip"><i class="fa-solid fa-chart-simple text-purple"></i> Streamlit</span>
+              <span class="chip"><i class="fa-solid fa-network-wired text-cyan"></i> REST APIs</span>
+            </div>
           </div>
 
-          <!-- Compact Achievements Grid -->
-          <div class="achievements-mini-grid">
-            <div class="mini-ach-tile">
-              <div class="mini-ach-icon aws"><i class="fa-brands fa-aws"></i></div>
-              <div class="mini-ach-info">
-                <span class="mini-ach-tag">AWS Certification</span>
-                <h4 class="mini-ach-title">AWS Cloud Quest: Cloud Practitioner</h4>
-                <p class="mini-ach-sub">Amazon Web Services</p>
-              </div>
+          <!-- AI & Data -->
+          <div class="stack-cluster">
+            <span class="cluster-label"><i class="fa-solid fa-brain text-purple"></i> AI & Data Science</span>
+            <div class="chips-flex">
+              <span class="chip"><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
+              <span class="chip"><i class="devicon-scikitlearn-plain colored"></i> Scikit-Learn</span>
+              <span class="chip"><i class="devicon-pandas-original colored"></i> Pandas</span>
+              <span class="chip"><i class="devicon-numpy-original colored"></i> NumPy</span>
+              <span class="chip"><i class="fa-solid fa-chart-line text-cyan"></i> Matplotlib</span>
+              <span class="chip"><i class="fa-solid fa-cubes text-purple"></i> FAISS & spaCy</span>
             </div>
+          </div>
 
-            <div class="mini-ach-tile">
-              <div class="mini-ach-icon csi"><i class="fa-solid fa-users-gear"></i></div>
-              <div class="mini-ach-info">
-                <span class="mini-ach-tag">Leadership</span>
-                <h4 class="mini-ach-title">CSI Core Committee Member</h4>
-                <p class="mini-ach-sub">KKWIEER • 2025–2026</p>
-              </div>
+          <!-- Databases & Tools -->
+          <div class="stack-cluster">
+            <span class="cluster-label"><i class="fa-solid fa-toolbox text-cyan"></i> Databases & Tools</span>
+            <div class="chips-flex">
+              <span class="chip"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+              <span class="chip"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+              <span class="chip"><i class="devicon-git-plain colored"></i> Git</span>
+              <span class="chip"><i class="devicon-github-original"></i> GitHub</span>
+              <span class="chip"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+              <span class="chip"><i class="fa-solid fa-chart-pie text-purple"></i> Power BI</span>
+              <span class="chip"><i class="fa-solid fa-diagram-project text-cyan"></i> DSA & OOP</span>
             </div>
+          </div>
 
-            <div class="mini-ach-tile">
-              <div class="mini-ach-icon hr"><i class="fa-brands fa-hackerrank"></i></div>
-              <div class="mini-ach-info">
-                <span class="mini-ach-tag">Verified Badges</span>
-                <h4 class="mini-ach-title">Python & SQL Certifications</h4>
-                <p class="mini-ach-sub">HackerRank</p>
-              </div>
-            </div>
+        </div>
+      </div>
 
-            <div class="mini-ach-tile">
-              <div class="mini-ach-icon hack"><i class="fa-solid fa-trophy"></i></div>
-              <div class="mini-ach-info">
-                <span class="mini-ach-tag">Hackathons</span>
-                <h4 class="mini-ach-title">Buildathon & Myntra HackerRamp</h4>
-                <p class="mini-ach-sub">National & Regional Prototype Events</p>
-              </div>
-            </div>
+      <!-- =================================================================
+           BLOCK 8: ACHIEVEMENTS & CREDENTIALS (Right - 5 cols)
+           ================================================================= -->
+      <div class="grid-card achievements-panel glass-card" id="achievements-panel" data-reveal="fade-left">
+        <div class="panel-header-row">
+          <div>
+            <span class="panel-subtitle">Milestones</span>
+            <h2 class="panel-title">Verified <span class="gradient-text">Credentials</span></h2>
           </div>
         </div>
 
-      </section>
+        <div class="achievements-stack-bento">
+          
+          <div class="ach-card-tile">
+            <div class="ach-icon-box aws"><i class="fa-brands fa-aws"></i></div>
+            <div class="ach-data">
+              <span class="ach-badge">AWS Certification</span>
+              <h4 class="ach-heading">AWS Cloud Quest: Cloud Practitioner</h4>
+              <p class="ach-note">Amazon Web Services</p>
+            </div>
+          </div>
+
+          <div class="ach-card-tile">
+            <div class="ach-icon-box csi"><i class="fa-solid fa-users-gear"></i></div>
+            <div class="ach-data">
+              <span class="ach-badge">Leadership</span>
+              <h4 class="ach-heading">CSI Core Committee Member</h4>
+              <p class="ach-note">Computer Society of India (KKWIEER • 2025–2026)</p>
+            </div>
+          </div>
+
+          <div class="ach-card-tile">
+            <div class="ach-icon-box hr"><i class="fa-brands fa-hackerrank"></i></div>
+            <div class="ach-data">
+              <span class="ach-badge">Skill Badges</span>
+              <h4 class="ach-heading">Python & SQL Verified Certifications</h4>
+              <p class="ach-note">HackerRank</p>
+            </div>
+          </div>
+
+          <div class="ach-card-tile">
+            <div class="ach-icon-box hack"><i class="fa-solid fa-trophy"></i></div>
+            <div class="ach-data">
+              <span class="ach-badge">Hackathons</span>
+              <h4 class="ach-heading">Buildathon & Myntra HackerRamp</h4>
+              <p class="ach-note">National & Regional Prototype Events</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
       <!-- =================================================================
-           ROW 5: CONTACT & CONNECT HUB
+           BLOCK 9: CONTACT & CONNECT HUB (Full Width - 12 cols)
            ================================================================= -->
-      <section class="dash-row contact-row" id="contact" data-reveal="fade-up">
-        <div class="contact-card-dashboard glass-card">
-          <div class="contact-left-info">
-            <span class="section-subtitle">Let's Connect</span>
-            <h2 class="card-headline">Get In <span class="gradient-text">Touch</span></h2>
-            <p class="contact-desc">
-              Open for software engineering roles, internships, and collaborative AI projects. Reach out via email or connect on professional channels:
+      <div class="grid-card contact-panel glass-card" id="contact-panel" data-reveal="fade-up">
+        <div class="contact-dual-layout">
+          
+          <!-- Left: Channels -->
+          <div class="contact-summary-col">
+            <span class="panel-subtitle">Let's Connect</span>
+            <h2 class="panel-title">Get In <span class="gradient-text">Touch</span></h2>
+            <p class="contact-text">
+              Open for software engineering internships, entry roles, and collaborative AI projects. Reach out directly:
             </p>
 
-            <div class="contact-channels-list">
-              <div class="contact-tile copy-trigger" data-copy="rampariyahetavi@gmail.com">
-                <div class="tile-icon purple"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-links-grid">
+              <div class="contact-link-tile copy-trigger" data-copy="rampariyahetavi@gmail.com">
+                <div class="c-icon purple"><i class="fa-solid fa-envelope"></i></div>
                 <div>
-                  <span class="tile-label">Email <span class="copy-badge">Click to Copy</span></span>
-                  <span class="tile-val">rampariyahetavi@gmail.com</span>
+                  <span class="c-label">Email <span class="c-badge">Copy</span></span>
+                  <span class="c-value">rampariyahetavi@gmail.com</span>
                 </div>
               </div>
 
-              <a href="https://linkedin.com/in/hetavi-rampariya" target="_blank" rel="noopener" class="contact-tile">
-                <div class="tile-icon cyan"><i class="fa-brands fa-linkedin-in"></i></div>
+              <a href="https://linkedin.com/in/hetavi-rampariya" target="_blank" rel="noopener" class="contact-link-tile">
+                <div class="c-icon cyan"><i class="fa-brands fa-linkedin-in"></i></div>
                 <div>
-                  <span class="tile-label">LinkedIn</span>
-                  <span class="tile-val">linkedin.com/in/hetavi-rampariya</span>
+                  <span class="c-label">LinkedIn</span>
+                  <span class="c-value">linkedin.com/in/hetavi-rampariya</span>
                 </div>
               </a>
 
-              <a href="https://github.com/Hetavi2102" target="_blank" rel="noopener" class="contact-tile">
-                <div class="tile-icon purple"><i class="fa-brands fa-github"></i></div>
+              <a href="https://github.com/Hetavi2102" target="_blank" rel="noopener" class="contact-link-tile">
+                <div class="c-icon purple"><i class="fa-brands fa-github"></i></div>
                 <div>
-                  <span class="tile-label">GitHub</span>
-                  <span class="tile-val">github.com/Hetavi2102</span>
+                  <span class="c-label">GitHub</span>
+                  <span class="c-value">github.com/Hetavi2102</span>
                 </div>
               </a>
             </div>
           </div>
 
-          <div class="contact-right-form">
-            <h3 class="form-title">Send a Quick Message</h3>
-            <form id="contact-form" class="contact-form-inner">
-              <div class="form-dual">
-                <div class="form-field">
-                  <label for="name" class="field-label">Name</label>
-                  <input type="text" id="name" name="name" class="field-input" placeholder="Your Name" required>
-                </div>
-                <div class="form-field">
-                  <label for="email" class="field-label">Email</label>
-                  <input type="email" id="email" name="email" class="field-input" placeholder="your.email@example.com" required>
-                </div>
+          <!-- Right: Direct Message Box -->
+          <div class="contact-form-col">
+            <h3 class="form-title">Send a Quick Note</h3>
+            <form id="contact-form" class="bento-form">
+              <div class="form-row-split">
+                <input type="text" id="name" name="name" class="bento-input" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" class="bento-input" placeholder="your.email@example.com" required>
               </div>
-              <div class="form-field">
-                <label for="subject" class="field-label">Subject</label>
-                <input type="text" id="subject" name="subject" class="field-input" placeholder="Software Opportunity / Project Inquiry" required>
-              </div>
-              <div class="form-field">
-                <label for="message" class="field-label">Message</label>
-                <textarea id="message" name="message" class="field-textarea" rows="3" placeholder="Hello Hetavi, I'd like to discuss..." required></textarea>
-              </div>
+              <input type="text" id="subject" name="subject" class="bento-input" placeholder="Subject / Opportunity" required>
+              <textarea id="message" name="message" class="bento-textarea" rows="3" placeholder="Hello Hetavi, I'd like to discuss..." required></textarea>
               <button type="submit" class="btn btn-primary btn-full" id="form-submit-btn">
                 <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
               </button>
             </form>
           </div>
+
         </div>
-      </section>
+      </div>
 
     </div>
   </main>
@@ -603,11 +538,11 @@
       </div>
 
       <div class="footer-links">
-        <a href="#overview">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Tech Stack</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
+        <a href="#overview">Profile</a>
+        <a href="#projects-panel">Projects</a>
+        <a href="#stack-panel">Tech Stack</a>
+        <a href="#achievements-panel">Achievements</a>
+        <a href="#contact-panel">Contact</a>
       </div>
 
       <div class="footer-copy">
@@ -749,12 +684,12 @@
         <button class="modal-close" id="close-project-modal" aria-label="Close Project Modal"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="modal-body" id="modal-project-body">
-        <!-- Dynamic content injected by script.js -->
+        <!-- Injected dynamically by script.js -->
       </div>
     </div>
   </div>
 
-  <!-- Toast Container -->
+  <!-- Toast Notifications -->
   <div class="toast-container" id="toast-container"></div>
 
   <!-- JavaScript -->

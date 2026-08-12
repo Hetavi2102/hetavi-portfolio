@@ -1,11 +1,10 @@
 /**
- * Hetavi Rampariya - Personal Developer Dashboard & Portfolio Interactive Scripts
- * Preserves the rich original aesthetic while powering the new responsive dashboard layout.
+ * Hetavi Rampariya - Personal Developer Profile / Dashboard Interactive Scripts
+ * Powers animations, particle canvas, terminal simulator, project modals, and resume viewer.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
-  initTypingEffect();
   initScrollSpy();
   initRevealOnScroll();
   initTerminalSimulator();
@@ -27,7 +26,7 @@ function initParticleCanvas() {
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  let mouse = { x: null, y: null, radius: 140 };
+  let mouse = { x: null, y: null, radius: 130 };
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -51,11 +50,11 @@ function initParticleCanvas() {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.45;
-      this.vy = (Math.random() - 0.5) * 0.45;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
       this.radius = Math.random() * 1.5 + 1;
       this.color = Math.random() > 0.5 ? 'rgba(124, 58, 237, ' : 'rgba(56, 189, 248, ';
-      this.alpha = Math.random() * 0.45 + 0.15;
+      this.alpha = Math.random() * 0.4 + 0.15;
     }
 
     update() {
@@ -65,7 +64,7 @@ function initParticleCanvas() {
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
 
-      // Mouse interaction
+      // Mouse repulsion
       if (mouse.x != null && mouse.y != null) {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
@@ -86,7 +85,7 @@ function initParticleCanvas() {
     }
   }
 
-  const count = Math.min(Math.floor((width * height) / 16000), 70);
+  const count = Math.min(Math.floor((width * height) / 16000), 65);
   for (let i = 0; i < count; i++) {
     particles.push(new Particle());
   }
@@ -103,11 +102,11 @@ function initParticleCanvas() {
         let dy = particles[i].y - particles[j].y;
         let dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 100) {
+        if (dist < 95) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(124, 58, 237, ${0.12 * (1 - dist / 100)})`;
+          ctx.strokeStyle = `rgba(124, 58, 237, ${0.1 * (1 - dist / 95)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -121,66 +120,19 @@ function initParticleCanvas() {
 }
 
 /* ==========================================================================
-   2. TYPING EFFECT
-   ========================================================================== */
-function initTypingEffect() {
-  const el = document.getElementById('typed-subtitle');
-  if (!el) return;
-
-  const titles = [
-    "AI & Data Science Engineering Student",
-    "Aspiring Software Developer",
-    "Python, Flask & ML Developer",
-    "Applied NLP & Systems Explorer"
-  ];
-
-  let titleIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-  let typingSpeed = 65;
-
-  function type() {
-    const currentTitle = titles[titleIdx];
-
-    if (isDeleting) {
-      el.textContent = currentTitle.substring(0, charIdx - 1);
-      charIdx--;
-      typingSpeed = 30;
-    } else {
-      el.textContent = currentTitle.substring(0, charIdx + 1);
-      charIdx++;
-      typingSpeed = 65;
-    }
-
-    if (!isDeleting && charIdx === currentTitle.length) {
-      isDeleting = true;
-      typingSpeed = 2200;
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      titleIdx = (titleIdx + 1) % titles.length;
-      typingSpeed = 350;
-    }
-
-    setTimeout(type, typingSpeed);
-  }
-
-  type();
-}
-
-/* ==========================================================================
-   3. DEVELOPER TERMINAL SIMULATOR
+   2. DEVELOPER TERMINAL SIMULATOR
    ========================================================================== */
 function initTerminalSimulator() {
   const activeCmd = document.getElementById('term-active-cmd');
   const activeRes = document.getElementById('term-active-res');
   const copyBtn = document.getElementById('terminal-copy-action');
   const termConsole = document.getElementById('terminal-console');
-  const termBtns = document.querySelectorAll('.term-btn');
+  const cmdChips = document.querySelectorAll('.cmd-chip');
 
   const commandMap = {
     whoami: {
       cmd: 'whoami',
-      res: 'Hetavi Rampariya — Final-Year B.Tech in AI & Data Science (KKWIEER Nashik | 8.17 CGPA)'
+      res: 'Hetavi Rampariya — B.Tech in AI & Data Science (KKWIEER Nashik • 8.17 CGPA)'
     },
     stack: {
       cmd: 'cat stack.txt',
@@ -188,17 +140,17 @@ function initTerminalSimulator() {
     },
     projects: {
       cmd: 'ls -l ./projects',
-      res: '• ContractLens (AI Legal Analyzer)\n• TailorFlow (Full-Stack Management Platform)\n• SmartShelf (ML Inventory Forecaster)\n• AI Bill Decoder (OCR Cost Explainer)'
+      res: '• ContractLens (AI Legal Analyzer)\n• TailorFlow (Smart Tailor Platform)\n• SmartShelf (ML Inventory Forecaster)\n• AI Bill Decoder (OCR Cost Explainer)'
     },
     clear: {
       cmd: 'clear',
-      res: 'Terminal output reset. Click shortcut commands below to query info.'
+      res: 'Terminal reset. Click shortcut chips to query developer profile.'
     }
   };
 
-  termBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-cmd');
+  cmdChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.getAttribute('data-cmd');
       const data = commandMap[key];
       if (data && activeCmd && activeRes) {
         activeCmd.textContent = data.cmd;
@@ -219,26 +171,26 @@ function initTerminalSimulator() {
 }
 
 /* ==========================================================================
-   4. SCROLLSPY & STICKY NAVBAR
+   3. SCROLLSPY & STICKY NAVBAR
    ========================================================================== */
 function initScrollSpy() {
   const navbar = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id], main[id]');
+  const panels = document.querySelectorAll('[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 25) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
     let current = 'overview';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
+    panels.forEach(panel => {
+      const panelTop = panel.offsetTop - 120;
+      const panelHeight = panel.clientHeight;
+      if (window.scrollY >= panelTop && window.scrollY < panelTop + panelHeight) {
+        current = panel.getAttribute('id');
       }
     });
 
@@ -252,7 +204,7 @@ function initScrollSpy() {
 }
 
 /* ==========================================================================
-   5. SCROLL REVEAL ANIMATIONS
+   4. SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 function initRevealOnScroll() {
   const reveals = document.querySelectorAll('[data-reveal]');
@@ -278,14 +230,14 @@ function initRevealOnScroll() {
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -30px 0px'
+    rootMargin: '0px 0px -25px 0px'
   });
 
   reveals.forEach(el => observer.observe(el));
 }
 
 /* ==========================================================================
-   6. PROJECT MODALS & RESUME MODAL
+   5. PROJECT MODALS & RESUME MODAL
    ========================================================================== */
 const projectDetails = {
   contractlens: {
@@ -400,24 +352,24 @@ function initModals() {
     modalTitle.innerHTML = `<i class="fa-solid fa-layer-group text-purple"></i> ${data.title}`;
     
     modalBody.innerHTML = `
-      <div style="display:flex; flex-direction:column; gap:16px;">
-        <div style="width:100%; height:200px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="width:100%; height:190px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
           <img src="${data.image}" alt="${data.title}" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div>
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-            <span style="font-size:0.80rem; color:var(--text-dim); font-weight:600;">${data.date}</span>
-            <span class="status-tag active">${data.status}</span>
+            <span style="font-size:0.78rem; color:var(--text-dim); font-weight:600;">${data.date}</span>
+            <span class="p-status active">${data.status}</span>
           </div>
-          <p style="font-size:0.90rem; color:var(--text-muted); line-height:1.6; margin-bottom:16px;">${data.overview}</p>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.55; margin-bottom:14px;">${data.overview}</p>
           
-          <h4 style="font-size:0.95rem; font-weight:700; color:#FFFFFF; margin-bottom:8px;"><i class="fa-solid fa-network-wired text-purple"></i> Architecture Highlights:</h4>
-          <ul style="margin-left:20px; font-size:0.85rem; color:var(--text-muted); line-height:1.55; margin-bottom:18px;">
-            ${data.architecture.map(a => `<li style="margin-bottom:5px;">${a}</li>`).join('')}
+          <h4 style="font-size:0.92rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-network-wired text-purple"></i> Architecture Highlights:</h4>
+          <ul style="margin-left:18px; font-size:0.82rem; color:var(--text-muted); line-height:1.5; margin-bottom:16px;">
+            ${data.architecture.map(a => `<li style="margin-bottom:4px;">${a}</li>`).join('')}
           </ul>
 
-          <h4 style="font-size:0.90rem; font-weight:700; color:#FFFFFF; margin-bottom:8px;"><i class="fa-solid fa-code text-cyan"></i> Tech Stack:</h4>
-          <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px;">
+          <h4 style="font-size:0.88rem; font-weight:700; color:#FFFFFF; margin-bottom:6px;"><i class="fa-solid fa-code text-cyan"></i> Tech Stack:</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-bottom:18px;">
             ${data.techStack.map(t => `<span class="tag">${t}</span>`).join('')}
           </div>
 
@@ -460,7 +412,7 @@ function initModals() {
 }
 
 /* ==========================================================================
-   7. CONTACT FORM & TOAST
+   6. CONTACT FORM & TOAST
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -480,7 +432,7 @@ function initContactForm() {
       form.reset();
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
-    }, 1000);
+    }, 900);
   });
 }
 
@@ -495,14 +447,14 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateY(15px)';
+    toast.style.transform = 'translateY(12px)';
     toast.style.transition = 'all 0.3s ease';
     setTimeout(() => toast.remove(), 300);
   }, 3500);
 }
 
 /* ==========================================================================
-   8. COPY TO CLIPBOARD
+   7. COPY TO CLIPBOARD
    ========================================================================== */
 function initCopyTriggers() {
   const copyTriggers = document.querySelectorAll('.copy-trigger');
@@ -523,7 +475,7 @@ function initCopyTriggers() {
 }
 
 /* ==========================================================================
-   9. MOBILE NAVIGATION
+   8. MOBILE NAVIGATION
    ========================================================================== */
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-toggle');
@@ -557,7 +509,7 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   10. BACK TO TOP
+   9. BACK TO TOP
    ========================================================================== */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
@@ -580,7 +532,7 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   11. CARD MOUSE SPOTLIGHT EFFECT
+   10. CARD MOUSE SPOTLIGHT EFFECT
    ========================================================================== */
 function initCardSpotlight() {
   const cards = document.querySelectorAll('.glass-card');
